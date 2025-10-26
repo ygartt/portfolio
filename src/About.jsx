@@ -1,5 +1,10 @@
 import React from "react";
 
+// HNA L-CHANGE: 7eyedna ../ mn l-paths
+import aboutImage from "./assets/imgs/yg-about.jpg";
+import quoteImage from "./assets/imgs/double quote.png";
+import about02Image from "./assets/imgs/about02.jpg";
+
 function About() {
   return (
     <section
@@ -9,10 +14,10 @@ function About() {
     >
       <div className="about-content fade-up">
         <div className="about-img fade-up">
-          <img src="/imgs/yg-about.jpg" alt="About Yassine" />
+          <img src={aboutImage} alt="About Yassine" />
         </div>
         <div className="about-text">
-          <img className="dq" src="/imgs/double quote.png" alt="Quote start" />
+          <img className="dq" src={quoteImage} alt="Quote start" />
           <h2>One special boy</h2>
           <h3>Software Developer & Graphic Designer</h3>
           <p>
@@ -30,7 +35,7 @@ function About() {
 
       <div className="additional-card fade-up">
         <div className="card-img">
-          <img src="/imgs/about02.jpg" alt="Artistic representation" />
+          <img src={about02Image} alt="Artistic representation" />
         </div>
         <div className="card-text-box">
           <p>
