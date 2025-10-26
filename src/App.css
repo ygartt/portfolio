@@ -932,10 +932,9 @@ body {
   font-size: 23px;
   font-weight: bold;
   color: #000;
-
   transition: color 0.3s ease;
+  text-decoration: underline; /* <-- Gha zid hada */
 }
-
 .contact-email a:hover {
   color: rgb(0, 102, 255);
 }
@@ -1308,7 +1307,6 @@ body {
     line-height: 1.6;
     margin: 0;
   }
-
   .left-card {
     flex-basis: 35%;
     min-width: 0;
@@ -1316,7 +1314,7 @@ body {
     text-align: center;
     padding: 30px 15px;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.777)),
+    background: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.777)),
       url("/imgs/about02.jpg") no-repeat center center/cover;
   }
 
@@ -1338,7 +1336,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.777)),
+    background: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.777)),
       url("/imgs/about02.jpg") no-repeat center center/cover;
     background-position: center top;
   }
