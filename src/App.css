@@ -1314,8 +1314,7 @@ body {
     text-align: center;
     padding: 30px 15px;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.777)),
-      url("/imgs/about02.jpg") no-repeat center center/cover;
+    background: black;
   }
 
   .laptop-img {
