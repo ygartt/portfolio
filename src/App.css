@@ -3,6 +3,12 @@
   font-family: "Butler-Black";
   src: url("/fonts/Butler_Black.otf") format("opentype");
 }
+
+/*====== Gill Sans =====*/
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/fonts/Gill Sans.otf") format("opentype");
+}
 @font-face {
   font-family: "Butler-Bold";
   src: url("/fonts/Butler_Bold.otf") format("opentype");
