@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 
 import CustomCursor from "./CustomCursor";
@@ -13,6 +13,34 @@ import Footer from "./Footer";
 import Lightbox from "./Lightbox";
 
 function App() {
+  useEffect(() => {
+    const targets = document.querySelectorAll(".fade-up");
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    targets.forEach((target) => observer.observe(target));
+
+    return () => {
+      targets.forEach((target) => observer.unobserve(target));
+    };
+  }, []);
+
   return (
     <>
       <CustomCursor />
