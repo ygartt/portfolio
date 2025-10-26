@@ -1090,6 +1090,12 @@ body {
 /* =================================================== */
 
 @media (max-width: 767px) {
+  .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+
   #about {
     scroll-margin-top: 16vh;
   }
@@ -1610,6 +1616,12 @@ body {
 /* ============== MEDIA QUERIES (TABLET) ============== */
 /* =================================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+
   .custom-cursor {
     display: none;
   }
