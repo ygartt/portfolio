@@ -1,5 +1,24 @@
 import React, { useEffect } from "react";
 
+// Import images
+import laptopImg from "./assets/imgs/laptop.png";
+import javaIcon from "./assets/imgs/skills/tech/1-java.png";
+import jsIcon from "./assets/imgs/skills/tech/2-js.png";
+import viteIcon from "./assets/imgs/skills/tech/3-vite.png";
+import reactIcon from "./assets/imgs/skills/tech/4-react.png";
+import gitIcon from "./assets/imgs/skills/tech/5-git.png";
+import phpIcon from "./assets/imgs/skills/tech/6-php.png";
+import mysqlIcon from "./assets/imgs/skills/tech/7-mysql.png";
+import tailwindIcon from "./assets/imgs/skills/tech/8-Tailwind.png"; // Corrected case if needed
+import vscodeIcon from "./assets/imgs/skills/soft/1-vscode.png";
+import intellijIcon from "./assets/imgs/skills/soft/2-IntelliJ.png"; // Corrected case if needed
+import psIcon from "./assets/imgs/skills/soft/4-adobePs.png";
+import aiIcon from "./assets/imgs/skills/soft/5-adobeiL.png";
+import blenderIcon from "./assets/imgs/skills/log/1-blender.png";
+import flStudioIcon from "./assets/imgs/skills/log/3-Fl studio.png";
+import autocadIcon from "./assets/imgs/skills/log/5-autocad.webp";
+import officeIcon from "./assets/imgs/skills/log/6-Microsoft.png";
+
 function Skills() {
   useEffect(() => {
     const skillsParagraph = document.getElementById("skills-description-p");
@@ -23,7 +42,7 @@ function Skills() {
       }
     }
 
-    updateSkillsText(); // Initial check
+    updateSkillsText();
     mobileMediaQuery.addEventListener("change", updateSkillsText);
 
     return () =>
@@ -38,7 +57,7 @@ function Skills() {
     >
       <div className="skills-layout-container">
         <div className="skill-card left-card">
-          <img src="/imgs/laptop.png" alt="Laptop" className="laptop-img" />
+          <img src={laptopImg} alt="Laptop" className="laptop-img" />
         </div>
 
         <div className="skill-card center-card">
@@ -57,46 +76,34 @@ function Skills() {
           <div className="skills-group">
             <h3>My Tech Stack</h3>
             <div className="skills-icon-grid">
-              <img src="/imgs/skills/tech/1-java.png" alt="Java Logo" />
-              <img src="/imgs/skills/tech/2-js.png" alt="JavaScript Logo" />
-              <img src="/imgs/skills/tech/3-vite.png" alt="Vite Logo" />
-              <img src="/imgs/skills/tech/4-react.png" alt="React Logo" />
-              <img src="/imgs/skills/tech/5-git.png" alt="Git Logo" />
-              <img src="/imgs/skills/tech/6-php.png" alt="PHP Logo" />
-              <img src="/imgs/skills/tech/7-mysql.png" alt="MySQL Logo" />
-              <img
-                src="/imgs/skills/tech/8-Tailwind.png"
-                alt="Tailwind CSS Logo"
-              />
+              <img src={javaIcon} alt="Java Logo" />
+              <img src={jsIcon} alt="JavaScript Logo" />
+              <img src={viteIcon} alt="Vite Logo" />
+              <img src={reactIcon} alt="React Logo" />
+              <img src={gitIcon} alt="Git Logo" />
+              <img src={phpIcon} alt="PHP Logo" />
+              <img src={mysqlIcon} alt="MySQL Logo" />
+              <img src={tailwindIcon} alt="Tailwind CSS Logo" />
             </div>
           </div>
 
           <div className="skills-group">
             <h3>My Software Toolkit</h3>
             <div className="skills-icon-grid">
-              <img
-                src="/imgs/skills/soft/1-vscode.png"
-                alt="Visual Studio Code"
-              />
-              <img src="/imgs/skills/soft/2-IntelliJ.png" alt="IntelliJ" />
-              <img
-                src="/imgs/skills/soft/4-adobePs.png"
-                alt="Adobe Photoshop"
-              />
-              <img
-                src="/imgs/skills/soft/5-adobeiL.png"
-                alt="Adobe Illustrator"
-              />
+              <img src={vscodeIcon} alt="Visual Studio Code" />
+              <img src={intellijIcon} alt="IntelliJ" />
+              <img src={psIcon} alt="Adobe Photoshop" />
+              <img src={aiIcon} alt="Adobe Illustrator" />
             </div>
           </div>
 
           <div className="skills-group">
             <h3>Other Software & Skills</h3>
             <div className="skills-icon-grid">
-              <img src="/imgs/skills/log/1-blender.png" alt="blender" />
-              <img src="/imgs/skills/log/3-Fl studio.png" alt="fl studio" />
-              <img src="/imgs/skills/log/5-autocad.webp" alt="autoCad" />
-              <img src="/imgs/skills/log/6-Microsoft.png" alt="Office" />
+              <img src={blenderIcon} alt="blender" />
+              <img src={flStudioIcon} alt="fl studio" />
+              <img src={autocadIcon} alt="autoCad" />
+              <img src={officeIcon} alt="Office" />
             </div>
           </div>
         </div>

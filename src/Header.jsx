@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 
-export default function Header() {
+// Import images
+import logoImage from "./assets/imgs/logo-png.png";
+import linkedinIcon from "./assets/imgs/icons/linkedin.png";
+import githubIcon from "./assets/imgs/icons/github.png";
+import pinterestIcon from "./assets/imgs/icons/Pinterest.png"; // Assuming Pinterest.png exists
+
+function Header() {
   useEffect(() => {
     const burger = document.getElementById("burger-menu");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -177,7 +183,7 @@ export default function Header() {
       <nav className="navbar">
         <div className="nav-left">
           <a href="#home-section" className="logo">
-            <img src="/imgs/logo-png.png" alt="YG Logo" className="logo-img" />
+            <img src={logoImage} alt="YG Logo" className="logo-img" />
           </a>
         </div>
         <div className="nav-center">
@@ -191,11 +197,7 @@ export default function Header() {
             aria-label="LinkedIn"
             className="social-icon"
           >
-            <img
-              src="/imgs/icons/LinkedIn.png"
-              alt="LinkedIn"
-              className="social-img"
-            />
+            <img src={linkedinIcon} alt="LinkedIn" className="social-img" />
           </a>
           <a
             href="https://github.com/ygartt"
@@ -204,11 +206,7 @@ export default function Header() {
             aria-label="GitHub"
             className="social-icon"
           >
-            <img
-              src="/imgs/icons/github.png"
-              alt="GitHub"
-              className="social-img"
-            />
+            <img src={githubIcon} alt="GitHub" className="social-img" />
           </a>
           <a
             href="https://pin.it/1HPIWQWik"
@@ -217,11 +215,7 @@ export default function Header() {
             aria-label="Pinterest"
             className="social-icon"
           >
-            <img
-              src="/imgs/icons/Pinterest.png"
-              alt="Pinterest"
-              className="social-img"
-            />
+            <img src={pinterestIcon} alt="Pinterest" className="social-img" />
           </a>
         </div>
         <div className="burger" id="burger-menu">
@@ -256,11 +250,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="social-icon"
           >
-            <img
-              src="/imgs/icons/LinkedIn.png"
-              alt="LinkedIn"
-              className="social-img"
-            />
+            <img src={linkedinIcon} alt="LinkedIn" className="social-img" />
           </a>
           <a
             href="https://github.com/ygartt"
@@ -268,26 +258,20 @@ export default function Header() {
             rel="noopener noreferrer"
             className="social-icon"
           >
-            <img
-              src="/imgs/icons/github.png"
-              alt="GitHub"
-              className="social-img"
-            />
+            <img src={githubIcon} alt="GitHub" className="social-img" />
           </a>
           <a
-            href="https://pinterest.com"
+            href="https://pinterest.com" // Assuming standard pinterest.com link here
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon"
           >
-            <img
-              src="/imgs/icons/Pinterest.png"
-              alt="Pinterest"
-              className="social-img"
-            />
+            <img src={pinterestIcon} alt="Pinterest" className="social-img" />
           </a>
         </div>
       </div>
     </header>
   );
 }
+
+export default Header;

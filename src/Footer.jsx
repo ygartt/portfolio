@@ -1,5 +1,12 @@
 import React from "react";
 
+// Import images
+import mailIcon from "./assets/imgs/icons/Mail.png";
+import linkedInIcon from "./assets/imgs/icons/LinkedIn.png";
+import instagramIcon from "./assets/imgs/icons/instagram.png";
+import pinterestIcon from "./assets/imgs/icons/Pinterest.png"; // Corrected name if needed
+import lineImage from "./assets/imgs/line.png";
+
 function Footer() {
   return (
     <footer className="footer" id="main-footer">
@@ -47,7 +54,7 @@ function Footer() {
               <li>
                 <a href="mailto:yassine.gorma.elidrisi@gmail.com">
                   <img
-                    src="/imgs/icons/Mail.png"
+                    src={mailIcon} // Use import
                     alt="Email"
                     className="footer-icon-img"
                   />
@@ -60,7 +67,7 @@ function Footer() {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/imgs/icons/LinkedIn.png"
+                    src={linkedInIcon} // Use import
                     alt="LinkedIn"
                     className="footer-icon-img"
                   />
@@ -73,23 +80,23 @@ function Footer() {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/imgs/icons/instagram.png"
+                    src={instagramIcon} // Use import
                     alt="Instagram"
                     className="footer-icon-img"
                   />
                 </a>
               </li>
               <li>
+                {/* Corrected Pinterest link structure and image class */}
                 <a
-                  href="https://pin.it/1HPIWQWik"
+                  href="https://pin.it/1HPIWQWik" // Assuming this is your Pinterest link
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon"
                 >
                   <img
-                    src="/imgs/icons/Pinterest.png"
+                    src={pinterestIcon} // Use import
                     alt="Pinterest"
-                    className="social-img"
+                    className="footer-icon-img" // Corrected class
                   />
                 </a>
               </li>
@@ -97,7 +104,7 @@ function Footer() {
           </div>
 
           <div className="footer-image">
-            <img src="/imgs/line.png" alt="" />
+            <img src={lineImage} alt="" /> {/* Use import */}
           </div>
         </div>
       </div>

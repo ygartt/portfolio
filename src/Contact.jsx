@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import linkIcon from "./assets/imgs/link.png";
+import contactImage from "./assets/imgs/contact.png";
 
 function Contact() {
   useEffect(() => {
@@ -51,11 +53,11 @@ function Contact() {
         <a href="mailto:yassine.gorma.elidrisi@gmail.com">
           yassine.gorma.elidrisi@gmail.com
         </a>
-        <img src="/imgs/link.png" alt="Arrow Icon" className="email-icon" />
+        <img src={linkIcon} alt="Arrow Icon" className="email-icon" />
       </div>
 
       <div className="contact-image-card">
-        <img src="/imgs/contact.png" alt="Contact Abstract" /> {/* Added alt */}
+        <img src={contactImage} alt="Contact Abstract" />
       </div>
     </section>
   );

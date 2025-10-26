@@ -1,42 +1,69 @@
 import React, { useEffect } from "react";
 
+// Import showcase images
+import showcaseImg1 from "./assets/imgs/showcase/1.jpg";
+import showcaseImg2 from "./assets/imgs/showcase/2.jpg";
+import showcaseImg3 from "./assets/imgs/showcase/3.jpg";
+import showcaseImg4 from "./assets/imgs/showcase/4.jpg";
+import showcaseImg5 from "./assets/imgs/showcase/5.jpg";
+import showcaseImg6 from "./assets/imgs/showcase/6.jpg";
+import showcaseImg7 from "./assets/imgs/showcase/7.jpg";
+import showcaseImg8 from "./assets/imgs/showcase/8.jpg";
+import showcaseImg9 from "./assets/imgs/showcase/9.jpg";
+import showcaseImg10 from "./assets/imgs/showcase/10.jpg";
+import showcaseImg11 from "./assets/imgs/showcase/11.jpg";
+import showcaseImg12 from "./assets/imgs/showcase/12.jpg";
+import showcaseImg13 from "./assets/imgs/showcase/13.jpg";
+import showcaseImg14 from "./assets/imgs/showcase/14.jpg";
+import showcaseImg15 from "./assets/imgs/showcase/15.jpg";
+
+// Import pagination icons
+import backIcon from "./assets/imgs/back.png";
+import nextIcon from "./assets/imgs/next.png";
+
 function Showcase() {
   useEffect(() => {
-    // PAGINATION LOGIC
     const itemsPerPage = 6;
     const grid = document.querySelector(".showcase-grid");
     const controls = document.querySelector(".pagination-controls");
     const items = grid ? grid.querySelectorAll(".showcase-item") : [];
 
-    let currentPage = 1; // Keep track of current page
-    let paginationPrevBtn, paginationNextBtn, numberBtnContainer; // Declare buttons
+    let currentPage = 1;
+    let paginationPrevBtn, paginationNextBtn, numberBtnContainer;
 
     if (grid && items.length > 0 && controls) {
       const pageCount = Math.ceil(items.length / itemsPerPage);
 
       paginationPrevBtn = document.createElement("button");
       paginationPrevBtn.classList.add("nav-btn", "prev");
-      paginationPrevBtn.innerHTML = `<img src="/imgs/back.png" alt="Back">`;
+      // Use imported icon variable for innerHTML
+      const prevImg = document.createElement("img");
+      prevImg.src = backIcon; // Use variable
+      prevImg.alt = "Back";
+      paginationPrevBtn.appendChild(prevImg);
       if (document.querySelector(".custom-cursor"))
         paginationPrevBtn.style.cursor = "none";
 
       paginationNextBtn = document.createElement("button");
       paginationNextBtn.classList.add("nav-btn", "next");
-      paginationNextBtn.innerHTML = `<img src="/imgs/next.png" alt="Next">`;
+      // Use imported icon variable for innerHTML
+      const nextImg = document.createElement("img");
+      nextImg.src = nextIcon; // Use variable
+      nextImg.alt = "Next";
+      paginationNextBtn.appendChild(nextImg);
       if (document.querySelector(".custom-cursor"))
         paginationNextBtn.style.cursor = "none";
 
       numberBtnContainer = document.createElement("div");
       numberBtnContainer.classList.add("pagination-numbers");
 
-      // Clear previous controls before adding new ones
       controls.innerHTML = "";
       controls.appendChild(paginationPrevBtn);
       controls.appendChild(numberBtnContainer);
       controls.appendChild(paginationNextBtn);
 
       const showPage = (page) => {
-        currentPage = page; // Update current page tracker
+        currentPage = page;
         const startIndex = (page - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         items.forEach((item) => (item.style.display = "none"));
@@ -62,19 +89,19 @@ function Showcase() {
       };
 
       const setupPagination = () => {
-        numberBtnContainer.innerHTML = ""; // Clear number buttons before setup
+        numberBtnContainer.innerHTML = "";
         if (pageCount <= 1) {
           controls.style.display = "none";
           return;
         }
-        controls.style.display = "flex"; // Ensure controls are visible if > 1 page
+        controls.style.display = "flex";
         for (let i = 1; i <= pageCount; i++) {
           const btn = document.createElement("button");
           btn.classList.add("pagination-btn");
           btn.innerText = i;
           if (i === 1) btn.classList.add("active");
           btn.addEventListener("click", () => {
-            showPage(i); // Pass 'i' directly
+            showPage(i);
           });
           if (document.querySelector(".custom-cursor"))
             btn.style.cursor = "none";
@@ -84,12 +111,12 @@ function Showcase() {
 
       const prevBtnClickHandler = () => {
         if (currentPage > 1) {
-          showPage(currentPage - 1); // Update directly
+          showPage(currentPage - 1);
         }
       };
       const nextBtnClickHandler = () => {
         if (currentPage < pageCount) {
-          showPage(currentPage + 1); // Update directly
+          showPage(currentPage + 1);
         }
       };
 
@@ -97,26 +124,28 @@ function Showcase() {
       paginationNextBtn.addEventListener("click", nextBtnClickHandler);
 
       setupPagination();
-      showPage(currentPage); // Show initial page
+      showPage(currentPage);
 
-      // Cleanup pagination listeners
       return () => {
-        paginationPrevBtn.removeEventListener("click", prevBtnClickHandler);
-        paginationNextBtn.removeEventListener("click", nextBtnClickHandler);
-        // Remove number button listeners (optional, but good practice)
-        numberBtnContainer
-          .querySelectorAll(".pagination-btn")
-          .forEach((btn) => {
-            // Need to store/retrieve the handler to remove it properly
-          });
+        if (paginationPrevBtn)
+          paginationPrevBtn.removeEventListener("click", prevBtnClickHandler);
+        if (paginationNextBtn)
+          paginationNextBtn.removeEventListener("click", nextBtnClickHandler);
+        if (numberBtnContainer) {
+          numberBtnContainer
+            .querySelectorAll(".pagination-btn")
+            .forEach((btn) => {
+              // Proper cleanup requires storing and removing exact listener
+              // For simplicity, this is often omitted or handled differently in React
+            });
+        }
       };
     } else if (controls) {
-      controls.style.display = "none"; // Hide controls if no items
+      controls.style.display = "none";
     }
-  }, []); // Run pagination logic once
+  }, []);
 
   useEffect(() => {
-    // DYNAMIC TEXT UPDATE LOGIC
     const showcaseHeaderP = document.getElementById("showcase-header-p");
     const textUpdateConfig = {
       "showcase-header-p": {
@@ -138,12 +167,31 @@ function Showcase() {
       }
     }
 
-    updateShowcaseText(); // Initial check
+    updateShowcaseText();
     mobileMediaQuery.addEventListener("change", updateShowcaseText);
 
     return () =>
       mobileMediaQuery.removeEventListener("change", updateShowcaseText);
   }, []);
+
+  // Create an array of image sources for easier mapping
+  const showcaseImages = [
+    showcaseImg1,
+    showcaseImg2,
+    showcaseImg3,
+    showcaseImg4,
+    showcaseImg5,
+    showcaseImg6,
+    showcaseImg7,
+    showcaseImg8,
+    showcaseImg9,
+    showcaseImg10,
+    showcaseImg11,
+    showcaseImg12,
+    showcaseImg13,
+    showcaseImg14,
+    showcaseImg15,
+  ];
 
   return (
     <section
@@ -164,56 +212,14 @@ function Showcase() {
       </div>
 
       <div className="showcase-grid">
-        {/* Repeat this block for each image (15 times) */}
-        <div className="showcase-item">
-          <img src="/imgs/showcase/1.jpg" alt="Showcase Image 1" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/2.jpg" alt="Showcase Image 2" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/3.jpg" alt="Showcase Image 3" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/4.jpg" alt="Showcase Image 4" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/5.jpg" alt="Showcase Image 5" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/6.jpg" alt="Showcase Image 6" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/7.jpg" alt="Showcase Image 7" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/8.jpg" alt="Showcase Image 8" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/9.jpg" alt="Showcase Image 9" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/10.jpg" alt="Showcase Image 10" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/11.jpg" alt="Showcase Image 11" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/12.jpg" alt="Showcase Image 12" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/13.jpg" alt="Showcase Image 13" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/14.jpg" alt="Showcase Image 14" />
-        </div>
-        <div className="showcase-item">
-          <img src="/imgs/showcase/15.jpg" alt="Showcase Image 15" />
-        </div>
-        {/* End repeat */}
+        {/* Map through the imported images */}
+        {showcaseImages.map((imgSrc, index) => (
+          <div className="showcase-item" key={index}>
+            <img src={imgSrc} alt={`Showcase Image ${index + 1}`} />
+          </div>
+        ))}
       </div>
 
-      {/* Pagination Controls will be populated by JS */}
       <div className="pagination-controls"></div>
     </section>
   );

@@ -1,5 +1,13 @@
 import React, { useEffect } from "react";
 
+// Import images
+import rmImage from "./assets/imgs/works/1-RM.jpg";
+import jaleoImage from "./assets/imgs/works/2-jaleo.jpg";
+import evoraImage from "./assets/imgs/works/3-Evora.jpg";
+import imapImage from "./assets/imgs/works/4-Imap.jpg";
+import ameedImage from "./assets/imgs/works/5-Ameed.jpg";
+import malmoImage from "./assets/imgs/works/6 - malmo.jpg";
+
 function Works() {
   useEffect(() => {
     const textUpdateConfig = {
@@ -76,11 +84,7 @@ function Works() {
       <div className="works-container">
         <div className="work-card">
           <div className="work-img-container">
-            <img
-              className="main-work-img"
-              src="/imgs/works/1-RM.jpg"
-              alt="RM Project"
-            />
+            <img className="main-work-img" src={rmImage} alt="RM Project" />
           </div>
           <div className="work-desc">
             <p id="work-desc-1">
@@ -102,7 +106,7 @@ function Works() {
           <div className="work-img-container">
             <img
               className="main-work-img"
-              src="/imgs/works/2-jaleo.jpg"
+              src={jaleoImage}
               alt="Jaleo Project"
             />
           </div>
@@ -126,7 +130,7 @@ function Works() {
           <div className="work-img-container">
             <img
               className="main-work-img"
-              src="/imgs/works/3-Evora.jpg"
+              src={evoraImage}
               alt="Evora Project"
             />
           </div>
@@ -148,11 +152,7 @@ function Works() {
         </div>
         <div className="work-card">
           <div className="work-img-container">
-            <img
-              className="main-work-img"
-              src="/imgs/works/4-Imap.jpg"
-              alt="Imap Project"
-            />
+            <img className="main-work-img" src={imapImage} alt="Imap Project" />
           </div>
           <div className="work-desc">
             <p id="work-desc-4">
@@ -174,7 +174,7 @@ function Works() {
           <div className="work-img-container">
             <img
               className="main-work-img"
-              src="/imgs/works/5-Ameed.jpg"
+              src={ameedImage}
               alt="Digital Agency Project"
             />
           </div>
@@ -193,7 +193,7 @@ function Works() {
           <div className="work-img-container">
             <img
               className="main-work-img"
-              src="/imgs/works/6 - malmo.jpg"
+              src={malmoImage}
               alt="Luxury Clothing E-commerce"
             />
           </div>

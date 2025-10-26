@@ -1,23 +1,23 @@
 import React, { useEffect } from "react";
+import backIcon from "./assets/imgs/back.png";
+import nextIcon from "./assets/imgs/next.png";
+import outIcon from "./assets/imgs/out.png";
 
 function Lightbox() {
   useEffect(() => {
-    // LIGHTBOX GALLERY LOGIC
-    const items = document.querySelectorAll(".showcase-item"); // Query items here
+    const items = document.querySelectorAll(".showcase-item");
     const lightbox = document.getElementById("lightbox");
 
     let allImages = [];
     let currentIndex = 0;
     let lightboxImg, lightboxCloseBtn, lightboxPrevBtn, lightboxNextBtn;
 
-    // Only proceed if lightbox element exists
     if (lightbox) {
       lightboxImg = lightbox.querySelector(".lightbox-img");
       lightboxCloseBtn = lightbox.querySelector(".lightbox-btn.close");
       lightboxPrevBtn = lightbox.querySelector(".lightbox-btn.prev");
       lightboxNextBtn = lightbox.querySelector(".lightbox-btn.next");
 
-      // Ensure child elements exist before adding listeners
       if (
         !lightboxImg ||
         !lightboxCloseBtn ||
@@ -25,10 +25,9 @@ function Lightbox() {
         !lightboxNextBtn
       ) {
         console.error("Lightbox elements not found!");
-        return; // Stop execution if elements are missing
+        return;
       }
 
-      // Populate images only if items exist
       if (items.length > 0) {
         items.forEach((item) => allImages.push(item.querySelector("img").src));
       }
@@ -41,7 +40,7 @@ function Lightbox() {
       };
 
       const openLightbox = (index) => {
-        if (allImages.length === 0) return; // Don't open if no images
+        if (allImages.length === 0) return;
         showImage(index);
         lightbox.classList.add("active");
         document.body.style.overflow = "hidden";
@@ -62,13 +61,12 @@ function Lightbox() {
         showImage((currentIndex - 1 + allImages.length) % allImages.length);
       };
 
-      // Add item listeners if items exist
       const itemClickListeners = [];
       if (items.length > 0) {
         items.forEach((item, index) => {
           const handler = () => openLightbox(index);
           item.addEventListener("click", handler);
-          itemClickListeners.push({ item, handler }); // Store for removal
+          itemClickListeners.push({ item, handler });
         });
       }
 
@@ -84,7 +82,6 @@ function Lightbox() {
       lightboxPrevBtn.addEventListener("click", prevBtnHandler);
       lightbox.addEventListener("click", lightboxBgHandler);
 
-      // Cleanup function
       return () => {
         itemClickListeners.forEach(({ item, handler }) => {
           item.removeEventListener("click", handler);
@@ -96,11 +93,10 @@ function Lightbox() {
         if (lightboxPrevBtn)
           lightboxPrevBtn.removeEventListener("click", prevBtnHandler);
         if (lightbox) lightbox.removeEventListener("click", lightboxBgHandler);
-        // Ensure body overflow is reset if component unmounts while lightbox is open
         document.body.style.overflow = "auto";
       };
     }
-  }, []); // Run once on mount
+  }, []);
 
   return (
     <div className="lightbox" id="lightbox">
@@ -108,13 +104,13 @@ function Lightbox() {
         <img src="" alt="Showcase Full View" className="lightbox-img" />
         <div className="lightbox-controls">
           <button className="lightbox-btn prev">
-            <img src="/imgs/back.png" alt="Previous" />
+            <img src={backIcon} alt="Previous" />
           </button>
           <button className="lightbox-btn next">
-            <img src="/imgs/next.png" alt="Next" />
+            <img src={nextIcon} alt="Next" />
           </button>
           <button className="lightbox-btn close">
-            <img src="/imgs/out.png" alt="Close" />
+            <img src={outIcon} alt="Close" />
           </button>
         </div>
       </div>
