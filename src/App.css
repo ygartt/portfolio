@@ -270,7 +270,7 @@ body {
   align-items: center;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-    url("imgs/ygarttBG.jpg");
+    url("/imgs/ygarttBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -430,7 +430,7 @@ body {
 /* ==== CARD 1: LISSER (Title) ==== */
 .left-card {
   background: linear-gradient(rgba(0, 0, 0, 0.6)),
-    url("imgs/about02.jpg") no-repeat center center/cover;
+    url("/imgs/about02.jpg") no-repeat center center/cover;
   flex-basis: 25%;
   min-width: 280px;
   position: relative;
@@ -483,7 +483,7 @@ body {
 /* ==== CARD 3: LIMN (Icons) ==== */
 .right-card {
   background: linear-gradient(rgba(0, 0, 0, 0.777)),
-    url("imgs/about02.jpg") no-repeat center center/cover;
+    url("/imgs/about02.jpg") no-repeat center center/cover;
   flex-basis: 25%;
   min-width: 300px;
   display: flex;
@@ -900,7 +900,7 @@ body {
 #main-footer {
   height: auto;
   padding-top: 5%;
-  background-image: url("imgs/footerbg.jpg");
+  background-image: url("/imgs/footerbg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1262,7 +1262,7 @@ body {
         rgba(0, 0, 0, 1) 0%,
         rgba(0, 0, 0, 0) 100%
       ),
-      url("imgs/about02.jpg") no-repeat center center / cover;
+      url("/imgs/about02.jpg") no-repeat center center / cover;
     background-position: center bottom;
   }
 
@@ -1285,7 +1285,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(0, 0, 0, 0.777)),
-      url("imgs/about02.jpg") no-repeat center center/cover;
+      url("/imgs/about02.jpg") no-repeat center center/cover;
     background-position: center top;
   }
 
@@ -1454,7 +1454,7 @@ body {
   /*===================================*/
   /*========= FOOTER =========*/
   #main-footer {
-    background-image: url("imgs/footerphone.jpg");
+    background-image: url("/imgs/footerphone.jpg");
     height: auto;
     border-radius: 40px 40px 0 0;
     padding-bottom: 3%;
