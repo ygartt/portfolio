@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import rmImage from "./assets/imgs/works/1-RM.jpg";
 import jaleoImage from "./assets/imgs/works/2-jaleo.jpg";
 import evoraImage from "./assets/imgs/works/3-Evora.jpg";
@@ -7,6 +8,38 @@ import ameedImage from "./assets/imgs/works/5-Ameed.jpg";
 import malmoImage from "./assets/imgs/works/6 - malmo.jpg";
 
 function Works() {
+  useEffect(() => {
+    const textUpdateConfig = {
+      "works-header-p": {
+        desktop: `This gallery represents a cross-section of my development capabilities, focusing on clean code and functional solutions ... Each piece was an opportunity to solve a unique technical problem, craft a compelling user experience, and deliver a polished, high-performance product.`,
+        mobile: `Each piece was an opportunity to solve a unique technical problem, craft a compelling user experience, and deliver a polished, high-performance product.`,
+      },
+    };
+
+    const mobileMediaQuery = window.matchMedia("(max-width: 767px)");
+
+    function updateWorksTexts() {
+      const isMobile = mobileMediaQuery.matches;
+      for (const id in textUpdateConfig) {
+        const element = document.getElementById(id);
+        if (element) {
+          if (!element.dataset.desktopText) {
+            element.dataset.desktopText = element.textContent;
+          }
+          element.textContent = isMobile
+            ? textUpdateConfig[id].mobile
+            : element.dataset.desktopText;
+        }
+      }
+    }
+
+    updateWorksTexts();
+    mobileMediaQuery.addEventListener("change", updateWorksTexts);
+
+    return () =>
+      mobileMediaQuery.removeEventListener("change", updateWorksTexts);
+  }, []);
+
   return (
     <section
       className="works fade-up"
@@ -39,8 +72,7 @@ function Works() {
               rel="noopener noreferrer"
               className="work-btn"
             >
-              Explore the Live Site
-              <i className="fas fa-compass"></i>
+              Explore the Live Site <i className="fas fa-compass"></i>
             </a>
           </div>
         </div>
@@ -63,8 +95,7 @@ function Works() {
               rel="noopener noreferrer"
               className="work-btn"
             >
-              Explore the Live Site
-              <i className="fas fa-compass"></i>
+              Explore the Live Site <i className="fas fa-compass"></i>
             </a>
           </div>
         </div>
@@ -87,8 +118,7 @@ function Works() {
               rel="noopener noreferrer"
               className="work-btn"
             >
-              Explore the Live Site
-              <i className="fas fa-compass"></i>
+              Explore the Live Site <i className="fas fa-compass"></i>
             </a>
           </div>
         </div>
@@ -107,8 +137,7 @@ function Works() {
               rel="noopener noreferrer"
               className="work-btn"
             >
-              Explore the Live Site
-              <i className="fas fa-compass"></i>
+              Explore the Live Site <i className="fas fa-compass"></i>
             </a>
           </div>
         </div>
@@ -126,8 +155,7 @@ function Works() {
               sale of digital products and services.
             </p>
             <span className="work-btn">
-              Project Coming Soon
-              <i className="fas fa-clock"></i>
+              Project Coming Soon <i className="fas fa-clock"></i>
             </span>
           </div>
         </div>
@@ -145,8 +173,7 @@ function Works() {
               featuring a premium user experience.
             </p>
             <span className="work-btn">
-              Project Coming Soon
-              <i className="fas fa-clock"></i>
+              Project Coming Soon <i className="fas fa-clock"></i>
             </span>
           </div>
         </div>
