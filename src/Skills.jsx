@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-
-// Import images
 import laptopImg from "./assets/imgs/laptop.png";
 import javaIcon from "./assets/imgs/skills/tech/1-java.png";
 import jsIcon from "./assets/imgs/skills/tech/2-js.png";
@@ -9,9 +7,9 @@ import reactIcon from "./assets/imgs/skills/tech/4-react.png";
 import gitIcon from "./assets/imgs/skills/tech/5-git.png";
 import phpIcon from "./assets/imgs/skills/tech/6-php.png";
 import mysqlIcon from "./assets/imgs/skills/tech/7-mysql.png";
-import tailwindIcon from "./assets/imgs/skills/tech/8-Tailwind.png"; // Corrected case if needed
+import tailwindIcon from "./assets/imgs/skills/tech/8-Tailwind.png";
 import vscodeIcon from "./assets/imgs/skills/soft/1-vscode.png";
-import intellijIcon from "./assets/imgs/skills/soft/2-IntelliJ.png"; // Corrected case if needed
+import intellijIcon from "./assets/imgs/skills/soft/2-IntelliJ.png";
 import psIcon from "./assets/imgs/skills/soft/4-adobePs.png";
 import aiIcon from "./assets/imgs/skills/soft/5-adobeiL.png";
 import blenderIcon from "./assets/imgs/skills/log/1-blender.png";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import MyLogo from "/imgs/logo-png.png";
+import MyLogo from "./assets/imgs/logo-png.png";
 
 import CustomCursor from "./CustomCursor";
 import Header from "./Header";
@@ -42,7 +42,7 @@ function App() {
       threshold: 0.1,
     };
 
-    const callback = (entries, observer) => {
+    const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");

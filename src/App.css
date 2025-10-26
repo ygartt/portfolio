@@ -1,113 +1,113 @@
 /* === BUTLER FONT FAMILY === */
 @font-face {
   font-family: "Butler-Black";
-  src: url("/fonts/Butler_Black.otf") format("opentype");
+  src: url("./assets/fonts/Butler_Black.otf") format("opentype");
 }
 
 /*====== Gill Sans =====*/
 @font-face {
   font-family: "Gill Sans";
-  src: url("/fonts/Gill Sans.otf") format("opentype");
+  src: url("./assets/fonts/Gill Sans.otf") format("opentype");
 }
 @font-face {
   font-family: "Butler-Bold";
-  src: url("/fonts/Butler_Bold.otf") format("opentype");
+  src: url("./assets/fonts/Butler_Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "Butler-ExtraBold";
-  src: url("/fonts/Butler_ExtraBold.otf") format("opentype");
+  src: url("./assets/fonts/Butler_ExtraBold.otf") format("opentype");
 }
 @font-face {
   font-family: "Butler-Light";
-  src: url("/fonts/Butler_Light.otf") format("opentype");
+  src: url("./assets/fonts/Butler_Light.otf") format("opentype");
 }
 @font-face {
   font-family: "Butler-Medium";
-  src: url("/fonts/Butler_Medium.otf") format("opentype");
+  src: url("./assets/fonts/Butler_Medium.otf") format("opentype");
 }
 @font-face {
   font-family: "Butler-Regular";
-  src: url("/fonts/Butler_Regular.otf") format("opentype");
+  src: url("./assets/fonts/Butler_Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "Butler-UltraLight";
-  src: url("/fonts/Butler_Ultra_Light.otf") format("opentype");
+  src: url("./assets/fonts/Butler_Ultra_Light.otf") format("opentype");
 }
 
 /* === CANIS MAJOR === */
 @font-face {
   font-family: "CanisMajor";
-  src: url("/fonts/CANIS-MAJOR.ttf") format("truetype");
+  src: url("./assets/fonts/CANIS-MAJOR.ttf") format("truetype");
 }
 
 /* === Movie Makers Personal Use === */
 @font-face {
   font-family: "MovieMakersPersonalUse";
-  src: url("/fonts/MovieMakersPersonalUse.ttf") format("truetype");
+  src: url("./assets/fonts/MovieMakersPersonalUse.ttf") format("truetype");
 }
 
 /* === CINZEL FAMILY === */
 @font-face {
   font-family: "Cinzel-Black";
-  src: url("/fonts/Cinzel-Black.otf") format("opentype"); /* Corrected typo */
+  src: url("./assets/fonts/Cinzel-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "Cinzel-Bold";
-  src: url("/fonts/Cinzel-Bold.otf") format("opentype");
+  src: url("./assets/fonts/Cinzel-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "Cinzel-Regular";
-  src: url("/fonts/Cinzel-Regular.otf") format("opentype");
+  src: url("./assets/fonts/Cinzel-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "CinzelDecorative-Black";
-  src: url("/fonts/CinzelDecorative-Black.otf") format("opentype");
+  src: url("./assets/fonts/CinzelDecorative-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "CinzelDecorative-Bold";
-  src: url("/fonts/CinzelDecorative-Bold.otf") format("opentype");
+  src: url("./assets/fonts/CinzelDecorative-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "CinzelDecorative-Regular";
-  src: url("/fonts/CinzelDecorative-Regular.otf") format("opentype");
+  src: url("./assets/fonts/CinzelDecorative-Regular.otf") format("opentype");
 }
 
 /* === GILL SANS CONDENSED === */
 @font-face {
   font-family: "GillSansCondensed";
-  src: url("/fonts/gill-sans-mt-condensed.ttf") format("truetype");
+  src: url("./assets/fonts/gill-sans-mt-condensed.ttf") format("truetype");
 }
 
 /* === HERTINE === */
 @font-face {
   font-family: "Hertine";
-  src: url("/fonts/Hertine.woff") format("woff"),
-    url("/fonts/Hertine.ttf") format("truetype"); /* Corrected path */
+  src: url("./assets/fonts/Hertine.woff") format("woff"),
+    url("./assets/fonts/Hertine.ttf") format("truetype");
 }
 
 /* === MISTRAL === */
 @font-face {
   font-family: "Mistral";
-  src: url("/fonts/MISTRAL.ttf") format("truetype");
+  src: url("./assets/fonts/MISTRAL.ttf") format("truetype");
 }
 
 /* === MOVIE FILMSTRIP === */
 @font-face {
   font-family: "MovieFilmstrip";
-  src: url("/fonts/Movie.woff") format("woff"),
-    url("/fonts/Movie.ttf") format("truetype"); /* Corrected path */
+  src: url("./assets/fonts/Movie.woff") format("woff"),
+    url("./assets/fonts/Movie.ttf") format("truetype");
 }
 
 /* === BlackMatcha === */
 @font-face {
   font-family: "BlackMatcha";
-  src: url("/fonts/Black-Matcha.otf") format("opentype"); /* Corrected path */
+  src: url("./assets/fonts/Black-Matcha.otf") format("opentype");
 }
 
 /* === BAUHS93 === */
 @font-face {
   font-family: "BAUHS93";
-  src: url("/fonts/BAUHS93.ttf") format("truetype"); /* Corrected path */
+  src: url("./assets/fonts/BAUHS93.ttf") format("truetype");
 }
 
 /* ========= Preloader ========== */
@@ -261,7 +261,6 @@ body {
     hue-rotate(200deg) brightness(100%) contrast(107%);
 }
 
-/* Khbbi l-burger f PC */
 .burger {
   display: none;
   flex-direction: column;
@@ -328,7 +327,7 @@ body {
   align-items: center;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-    url("/imgs/ygarttBG.jpg");
+    url("./assets/imgs/ygarttBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -474,7 +473,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0; /* HNA L-CHANGE */
+  gap: 0;
   width: 95%;
   margin: 0 auto;
 }
@@ -485,17 +484,16 @@ body {
   background-color: #000000;
 }
 
-/* ==== CARD 1: LISSER (Title) ==== */
+/* ==== CARD 1:==== */
 .left-card {
   background: linear-gradient(rgba(0, 0, 0, 0.6)),
-    url("/imgs/about02.jpg") no-repeat center center/cover;
+    url("./assets/imgs/about02.jpg") no-repeat center center/cover;
   flex-basis: 25%;
   min-width: 280px;
   position: relative;
   border-radius: 17px 0 0 17px;
 }
 
-/* HADI HIYA TSWIRA LI FO9 L-CARDS */
 .laptop-img {
   position: absolute;
   z-index: 10;
@@ -505,7 +503,7 @@ body {
   height: auto;
 }
 
-/* ==== CARD 2: L-WEST (Paragraph) ==== */
+/* ==== CARD 2:  ==== */
 .center-card {
   background-color: rgb(0, 102, 255);
   display: flex;
@@ -538,10 +536,10 @@ body {
   color: #ffffff;
 }
 
-/* ==== CARD 3: LIMN (Icons) ==== */
+/* ==== CARD 3: ==== */
 .right-card {
   background: linear-gradient(rgba(0, 0, 0, 0.777)),
-    url("/imgs/about02.jpg") no-repeat center center/cover;
+    url("./assets/imgs/about02.jpg") no-repeat center center/cover;
   flex-basis: 25%;
   min-width: 300px;
   display: flex;
@@ -933,7 +931,7 @@ body {
   font-weight: bold;
   color: #000;
   transition: color 0.3s ease;
-  text-decoration: underline; /* <-- Gha zid hada */
+  text-decoration: underline;
 }
 .contact-email a:hover {
   color: rgb(0, 102, 255);
@@ -957,7 +955,7 @@ body {
 #main-footer {
   height: auto;
   padding-top: 5%;
-  background-image: url("/imgs/footerbg.jpg");
+  background-image: url("./assets/imgs/footerbg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1261,9 +1259,7 @@ body {
     display: none;
   }
 
-  /* ============================ */
-  /* ===== SKILLS (MOBILE) ===== */
-  /* ============================ */
+  /* ===== SKILLS ===== */
 
   .skills {
     padding: 10% 5%;
@@ -1342,7 +1338,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.777)),
-      url("/imgs/about02.jpg") no-repeat center center/cover;
+      url("./assets/imgs/about02.jpg") no-repeat center center/cover;
     background-position: center top;
   }
 
@@ -1368,9 +1364,12 @@ body {
   .skills-icon-grid img {
     height: 25px;
   }
-  /* ============================ */
-  /* ===== WORKS (MOBILE) ===== */
-  /* ============================ */
+
+  /* ===== WORKS  ===== */
+
+  #w5and6 {
+    display: none;
+  }
 
   .works {
     padding: 10% 5%;
@@ -1396,10 +1395,14 @@ body {
   }
 
   .work-card {
-    flex-basis: calc(50% - 10px);
+    flex-basis: 87%;
     min-width: 0;
     display: flex;
     flex-direction: column;
+  }
+
+  .work-card:hover {
+    transform: translateY(0px);
   }
 
   .work-desc {
@@ -1426,9 +1429,7 @@ body {
     font-size: 11px;
   }
 
-  /* ============================ */
-  /* ===== SHOWCASE (MOBILE) ==== */
-  /* ============================ */
+  /* ===== SHOWCASE ==== */
 
   .showcase {
     padding: 10% 5%;
@@ -1463,9 +1464,7 @@ body {
     width: 20px;
   }
 
-  /* ============================ */
-  /* ===== CONTACT (MOBILE) ===== */
-  /* ============================ */
+  /* ===== CONTACT ===== */
 
   .contact {
     padding: 10% 5%;
@@ -1508,10 +1507,10 @@ body {
     max-width: 100%;
     display: block;
   }
-  /*===================================*/
+
   /*========= FOOTER =========*/
   #main-footer {
-    background-image: url("/imgs/footerphone.jpg");
+    background-image: url("./assets/imgs/footerphone.jpg");
     height: auto;
     border-radius: 40px 40px 0 0;
     padding-bottom: 3%;

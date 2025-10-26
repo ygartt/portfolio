@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-
-// Import showcase images
 import showcaseImg1 from "./assets/imgs/showcase/1.jpg";
 import showcaseImg2 from "./assets/imgs/showcase/2.jpg";
 import showcaseImg3 from "./assets/imgs/showcase/3.jpg";
@@ -17,7 +15,6 @@ import showcaseImg13 from "./assets/imgs/showcase/13.jpg";
 import showcaseImg14 from "./assets/imgs/showcase/14.jpg";
 import showcaseImg15 from "./assets/imgs/showcase/15.jpg";
 
-// Import pagination icons
 import backIcon from "./assets/imgs/back.png";
 import nextIcon from "./assets/imgs/next.png";
 
@@ -36,9 +33,9 @@ function Showcase() {
 
       paginationPrevBtn = document.createElement("button");
       paginationPrevBtn.classList.add("nav-btn", "prev");
-      // Use imported icon variable for innerHTML
+
       const prevImg = document.createElement("img");
-      prevImg.src = backIcon; // Use variable
+      prevImg.src = backIcon;
       prevImg.alt = "Back";
       paginationPrevBtn.appendChild(prevImg);
       if (document.querySelector(".custom-cursor"))
@@ -46,9 +43,9 @@ function Showcase() {
 
       paginationNextBtn = document.createElement("button");
       paginationNextBtn.classList.add("nav-btn", "next");
-      // Use imported icon variable for innerHTML
+
       const nextImg = document.createElement("img");
-      nextImg.src = nextIcon; // Use variable
+      nextImg.src = nextIcon;
       nextImg.alt = "Next";
       paginationNextBtn.appendChild(nextImg);
       if (document.querySelector(".custom-cursor"))
@@ -134,10 +131,7 @@ function Showcase() {
         if (numberBtnContainer) {
           numberBtnContainer
             .querySelectorAll(".pagination-btn")
-            .forEach((btn) => {
-              // Proper cleanup requires storing and removing exact listener
-              // For simplicity, this is often omitted or handled differently in React
-            });
+            .forEach(() => {});
         }
       };
     } else if (controls) {
@@ -174,7 +168,6 @@ function Showcase() {
       mobileMediaQuery.removeEventListener("change", updateShowcaseText);
   }, []);
 
-  // Create an array of image sources for easier mapping
   const showcaseImages = [
     showcaseImg1,
     showcaseImg2,
@@ -212,7 +205,6 @@ function Showcase() {
       </div>
 
       <div className="showcase-grid">
-        {/* Map through the imported images */}
         {showcaseImages.map((imgSrc, index) => (
           <div className="showcase-item" key={index}>
             <img src={imgSrc} alt={`Showcase Image ${index + 1}`} />

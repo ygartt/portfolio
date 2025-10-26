@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-
-// Import images
 import logoImage from "./assets/imgs/logo-png.png";
 import linkedinIcon from "./assets/imgs/icons/linkedin.png";
 import githubIcon from "./assets/imgs/icons/github.png";
-import pinterestIcon from "./assets/imgs/icons/Pinterest.png"; // Assuming Pinterest.png exists
+import pinterestIcon from "./assets/imgs/icons/Pinterest.png";
 
 function Header() {
   useEffect(() => {
@@ -101,16 +99,13 @@ function Header() {
     scrollLinks.forEach((anchor) => {
       const targetSelector = anchor.getAttribute("href");
       let targetElement = null;
-      try {
-        if (
-          targetSelector.startsWith("#") ||
-          (targetSelector.startsWith(".") &&
-            document.querySelector(targetSelector))
-        ) {
-          targetElement = document.querySelector(targetSelector);
-        }
-      } catch (e) {
-        targetElement = null;
+
+      if (
+        targetSelector.startsWith("#") ||
+        (targetSelector.startsWith(".") &&
+          document.querySelector(targetSelector))
+      ) {
+        targetElement = document.querySelector(targetSelector);
       }
 
       if (targetElement) {
@@ -261,7 +256,7 @@ function Header() {
             <img src={githubIcon} alt="GitHub" className="social-img" />
           </a>
           <a
-            href="https://pinterest.com" // Assuming standard pinterest.com link here
+            href="https://pinterest.com"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon"

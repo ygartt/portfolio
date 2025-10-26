@@ -1,6 +1,4 @@
 import React from "react";
-
-// HNA L-CHANGE: 7eyedna ../ mn l-paths
 import aboutImage from "./assets/imgs/yg-about.jpg";
 import quoteImage from "./assets/imgs/double quote.png";
 import about02Image from "./assets/imgs/about02.jpg";

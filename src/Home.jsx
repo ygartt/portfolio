@@ -1,5 +1,5 @@
 import React from "react";
-import contentImage from "./assets/imgs/contentYGARTT.png"; // Import the image
+import contentImage from "./assets/imgs/contentYGARTT.png";
 
 function Home() {
   return (
@@ -9,7 +9,6 @@ function Home() {
       data-section-name="Welcome to My world"
     >
       <div className="section-content fade-up">
-        {/* Use the imported image variable */}
         <img className="content-img" src={contentImage} alt="YG Art Main" />
       </div>
     </section>
