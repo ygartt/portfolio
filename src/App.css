@@ -1308,20 +1308,15 @@ body {
   }
 
   .left-card {
-    flex-basis: 35%; /* Or whatever basis you are using */
+    flex-basis: 35%;
     min-width: 0;
     border-radius: 17px 0 0 17px;
     text-align: center;
     padding: 30px 15px;
     position: relative;
-    /* HNA L-CHANGE: */
-    background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      url("/imgs/about02.jpg") no-repeat center center / cover;
-    background-position: center bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0.777)),
+      url("/imgs/about02.jpg") no-repeat center center/cover;
+    background-position: center top;
   }
 
   .laptop-img {
