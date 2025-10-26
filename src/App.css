@@ -1127,8 +1127,9 @@ body {
   .navbar {
     cursor: pointer;
     width: 88%;
-    padding: 3% 7.77%;
-    padding-right: 9%;
+    padding: 3% 8%;
+    padding-right: 13%;
+    padding-left: 9%;
     height: 60px;
     position: relative;
   }
@@ -1140,6 +1141,7 @@ body {
   #current-section-name {
     font-size: 12px;
     padding: 2px 12px;
+    padding-right: 7%;
   }
 
   .nav-right {
