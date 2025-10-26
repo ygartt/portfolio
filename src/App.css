@@ -104,6 +104,58 @@
   src: url("/fonts/BAUHS93.ttf") format("truetype"); /* Corrected path */
 }
 
+/* ========= Preloader ========== */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.preloader-logo {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  animation: pulseLogo 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseLogo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ========= Animation ========== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

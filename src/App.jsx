@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+
+import MyLogo from "/imgs/logo-png.png";
 
 import CustomCursor from "./CustomCursor";
 import Header from "./Header";
@@ -12,7 +14,25 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import Lightbox from "./Lightbox";
 
+const Preloader = ({ isLoaded }) => {
+  return (
+    <div className={`preloader ${isLoaded ? "loaded" : ""}`}>
+      <img src={MyLogo} alt="Loading..." className="preloader-logo" />
+    </div>
+  );
+};
+
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const targets = document.querySelectorAll(".fade-up");
 
@@ -33,7 +53,6 @@ function App() {
     };
 
     const observer = new IntersectionObserver(callback, options);
-
     targets.forEach((target) => observer.observe(target));
 
     return () => {
@@ -43,6 +62,7 @@ function App() {
 
   return (
     <>
+      <Preloader isLoaded={isLoaded} />
       <CustomCursor />
       <Header />
       <main>
