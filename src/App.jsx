@@ -26,28 +26,38 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 2000);
+    const handleLoad = () => {
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 500);
+    };
 
-    return () => clearTimeout(timer);
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   useEffect(() => {
     const targets = document.querySelectorAll(".fade-up");
+    if (!targets.length) return;
 
     const options = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: "0px 0px -50px 0px",
       threshold: 0.1,
     };
 
-    const callback = (entries) => {
+    const callback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
+          observer.unobserve(entry.target);
         }
       });
     };
@@ -56,25 +66,31 @@ function App() {
     targets.forEach((target) => observer.observe(target));
 
     return () => {
-      targets.forEach((target) => observer.unobserve(target));
+      if (observer) {
+        observer.disconnect();
+      }
     };
-  }, []);
+  }, [isLoaded]);
 
   return (
     <>
       <Preloader isLoaded={isLoaded} />
-      <CustomCursor />
-      <Header />
-      <main>
-        <Home />
-        <About />
-        <Skills />
-        <Works />
-        <Showcase />
-        <Contact />
-      </main>
-      <Footer />
-      <Lightbox />
+      {isLoaded && (
+        <>
+          <CustomCursor />
+          <Header />
+          <main>
+            <Home />
+            <About />
+            <Skills />
+            <Works />
+            <Showcase />
+            <Contact />
+          </main>
+          <Footer />
+          <Lightbox />
+        </>
+      )}
     </>
   );
 }
