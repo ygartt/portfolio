@@ -1,0 +1,78 @@
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+
+import backIcon from "../assets/imgs/back.png";
+import nextIcon from "../assets/imgs/next.png";
+import outIcon from "../assets/imgs/out.png";
+
+const portalRoot = document.body;
+
+function Lightbox({ images, currentIndex, setCurrentIndex, isOpen, onClose }) {
+  useEffect(() => {
+    const mainAppRoot = document.getElementById("root");
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+
+      if (mainAppRoot) {
+        mainAppRoot.style.filter = "blur(7px)";
+
+        mainAppRoot.style.pointerEvents = "none";
+      }
+    } else {
+      document.body.style.overflow = "auto";
+      if (mainAppRoot) {
+        mainAppRoot.style.filter = "none";
+        mainAppRoot.style.pointerEvents = "auto";
+      }
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      if (mainAppRoot) {
+        mainAppRoot.style.filter = "none";
+        mainAppRoot.style.pointerEvents = "auto";
+      }
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  const showNext = () => setCurrentIndex((currentIndex + 1) % images.length);
+  const showPrev = () =>
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+
+  const handleBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) onClose();
+  };
+
+  return ReactDOM.createPortal(
+    <div
+      className="lightbox active"
+      onClick={handleBackgroundClick}
+      style={{ cursor: "default", zIndex: 10000 }}
+    >
+      <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+        <img
+          src={images[currentIndex]}
+          alt={`Showcase Image ${currentIndex + 1}`}
+          className="lightbox-img"
+        />
+        <div className="lightbox-controls">
+          <button className="lightbox-btn prev" onClick={showPrev}>
+            <img src={backIcon} alt="Previous" />
+          </button>
+          <button className="lightbox-btn next" onClick={showNext}>
+            <img src={nextIcon} alt="Next" />
+          </button>
+          <button className="lightbox-btn close" onClick={onClose}>
+            <img src={outIcon} alt="Close" />
+          </button>
+        </div>
+      </div>
+    </div>,
+    portalRoot
+  );
+}
+
+export default Lightbox;
