@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 
 import rmImage from "../assets/imgs/works/1-RM.jpg";
 import jaleoImage from "../assets/imgs/works/2-jaleo.jpg";
-import evoraImage from "../assets/imgs/works/3-Evora.jpg";
+import qoodyImage from "../assets/imgs/works/qoody.jpg";
 import imapImage from "../assets/imgs/works/4-Imap.jpg";
-import ameedImage from "../assets/imgs/works/5-Ameed.jpg";
-import malmoImage from "../assets/imgs/works/6 - malmo.jpg";
+import automgImage from "../assets/imgs/works/automg.jpg";
+import waveyiImage from "../assets/imgs/works/waveyi.jpg";
 
 const worksData = [
   {
@@ -28,11 +28,11 @@ const worksData = [
   },
   {
     id: 3,
-    imageSrc: evoraImage,
-    altText: "Evora Project",
+    imageSrc: qoodyImage,
+    altText: "Qoody Project",
     description:
-      "An elegant e-commerce platform for a boutique that sells high-end Moroccan caftans.",
-    link: "https://evora-couture.pages.dev",
+      "Developed a modern website for a web agency specializing in the sale of digital products and services.",
+    link: "https://qoody.vercel.app",
     isComingSoon: false,
   },
   {
@@ -46,19 +46,19 @@ const worksData = [
   },
   {
     id: 5,
-    imageSrc: ameedImage,
-    altText: "Digital Agency Project",
+    imageSrc: automgImage,
+    altText: "AutoMG Cars",
     description:
-      "Developed a modern website for a web agency specializing in the sale of digital products and services.",
+      "Sleek and dynamic website for AutoMG, showcasing classic and special cars with style and flair.",
     link: null,
     isComingSoon: true,
   },
   {
     id: 6,
-    imageSrc: malmoImage,
-    altText: "Luxury Clothing E-commerce",
+    imageSrc: waveyiImage,
+    altText: "Waveyi Clothing",
     description:
-      "Built a sophisticated e-commerce site focused on luxury clothing, featuring a premium user experience.",
+      "Trendy and vibrant e-commerce site for Waveyi, tailored for Gen Z fashion lovers and modern shoppers.",
     link: null,
     isComingSoon: true,
   },
