@@ -1,19 +1,21 @@
 import React, { useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
 
 function CustomCursor() {
   const cursorRef = useRef(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
-
-    const links = Array.from(document.querySelectorAll("[href]"));
+    const links = Array.from(
+      document.querySelectorAll("a, button, .clickable")
+    );
 
     document.body.style.cursor = "none";
     links.forEach((link) => (link.style.cursor = "none"));
 
     const handleMouseMove = (e) => {
       if (cursor) {
-        cursor.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
       }
     };
 
@@ -25,7 +27,7 @@ function CustomCursor() {
       if (cursor) cursor.style.opacity = "1";
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     document.documentElement.addEventListener("mouseleave", handleMouseLeave);
     document.documentElement.addEventListener("mouseenter", handleMouseEnter);
 
@@ -45,7 +47,23 @@ function CustomCursor() {
     };
   }, []);
 
-  return <div ref={cursorRef} className="custom-cursor"></div>;
+  return ReactDOM.createPortal(
+    <div
+      ref={cursorRef}
+      className="custom-cursor"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+        zIndex: 99999,
+        transition: "none",
+        willChange: "transform",
+        transform: "translate3d(-100px, -100px, 0)",
+      }}
+    ></div>,
+    document.body
+  );
 }
 
 export default CustomCursor;

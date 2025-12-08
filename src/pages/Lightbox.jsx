@@ -13,10 +13,8 @@ function Lightbox({ images, currentIndex, setCurrentIndex, isOpen, onClose }) {
 
     if (isOpen) {
       document.body.style.overflow = "hidden";
-
       if (mainAppRoot) {
         mainAppRoot.style.filter = "blur(7px)";
-
         mainAppRoot.style.pointerEvents = "none";
       }
     } else {
@@ -46,11 +44,15 @@ function Lightbox({ images, currentIndex, setCurrentIndex, isOpen, onClose }) {
     if (e.target === e.currentTarget) onClose();
   };
 
+  // Button styles to hide system cursor
+  const btnStyle = { cursor: "none", zIndex: 10001 };
+
   return ReactDOM.createPortal(
     <div
       className="lightbox active"
       onClick={handleBackgroundClick}
-      style={{ cursor: "default", zIndex: 10000 }}
+      // MUHIM: Zidna z-index w cursor: none hna
+      style={{ cursor: "none", zIndex: 10000 }}
     >
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
         <img
@@ -59,13 +61,25 @@ function Lightbox({ images, currentIndex, setCurrentIndex, isOpen, onClose }) {
           className="lightbox-img"
         />
         <div className="lightbox-controls">
-          <button className="lightbox-btn prev" onClick={showPrev}>
+          <button
+            className="lightbox-btn prev"
+            onClick={showPrev}
+            style={btnStyle}
+          >
             <img src={backIcon} alt="Previous" />
           </button>
-          <button className="lightbox-btn next" onClick={showNext}>
+          <button
+            className="lightbox-btn next"
+            onClick={showNext}
+            style={btnStyle}
+          >
             <img src={nextIcon} alt="Next" />
           </button>
-          <button className="lightbox-btn close" onClick={onClose}>
+          <button
+            className="lightbox-btn close"
+            onClick={onClose}
+            style={btnStyle}
+          >
             <img src={outIcon} alt="Close" />
           </button>
         </div>

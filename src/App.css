@@ -196,7 +196,7 @@ body {
   border-radius: 50%;
   pointer-events: none; /* cursor does not block clicks */
   transform: translate(-50%, -50%);
-  z-index: 10000; /* Fo9 lightbox */
+  z-index: 10000;
   transition: transform 0.1s ease-out, opacity 0.2s ease-out;
 }
 
