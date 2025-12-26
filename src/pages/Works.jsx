@@ -38,22 +38,23 @@ const worksData = [
   },
   {
     id: 4,
-    imageSrc: imapImage,
-    altText: "Imap Project",
-    description:
-      "A professional site for an academy offering various formations and educational courses.",
-    link: "https://imap-academy.pages.dev",
-    isComingSoon: false,
-  },
-  {
-    id: 5,
     imageSrc: atlasImage,
     altText: "Atlas Ride",
     description:
       "A sleek VIP website for Atlas Ride, showcasing an exclusive fleet of classic and premium vehicles.",
-    link: null,
+    link: "atlas-ride.com",
     isComingSoon: true,
   },
+  {
+    id: 5,
+    imageSrc: automgImage,
+    altText: "Auto MG cars",
+    description:
+      "Sleek and dynamic website for Atlas Ride, showcasing classic and special cars with style and flair.",
+    link: null,
+    isComingSoon: false,
+  },
+
   {
     id: 6,
     imageSrc: waveyiImage,
