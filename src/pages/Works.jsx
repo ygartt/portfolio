@@ -43,7 +43,7 @@ const worksData = [
     description:
       "A sleek VIP website for Atlas Ride, showcasing an exclusive fleet of classic and premium vehicles.",
     link: "atlas-ride.com",
-    isComingSoon: true,
+    isComingSoon: false,
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const worksData = [
     description:
       "Sleek and dynamic website for Atlas Ride, showcasing classic and special cars with style and flair.",
     link: null,
-    isComingSoon: false,
+    isComingSoon: true,
   },
 
   {
