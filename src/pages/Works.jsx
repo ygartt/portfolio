@@ -6,6 +6,7 @@ import qoodyImage from "../assets/imgs/works/qoody.jpg";
 import imapImage from "../assets/imgs/works/4-Imap.jpg";
 import automgImage from "../assets/imgs/works/automg.jpg";
 import waveyiImage from "../assets/imgs/works/waveyi.jpg";
+import atlasImage from "../assets/imgs/works/AtlasRide.jpg";
 
 const worksData = [
   {
@@ -46,10 +47,10 @@ const worksData = [
   },
   {
     id: 5,
-    imageSrc: automgImage,
-    altText: "AutoMG Cars",
+    imageSrc: atlasImage,
+    altText: "Atlas Ride",
     description:
-      "Sleek and dynamic website for AutoMG, showcasing classic and special cars with style and flair.",
+      "A sleek VIP website for Atlas Ride, showcasing an exclusive fleet of classic and premium vehicles.",
     link: null,
     isComingSoon: true,
   },
