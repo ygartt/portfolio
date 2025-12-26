@@ -42,7 +42,7 @@ const worksData = [
     altText: "Atlas Ride",
     description:
       "A sleek VIP website for Atlas Ride, showcasing an exclusive fleet of classic and premium vehicles.",
-    link: "atlas-ride.com",
+    link: "https://atlas-ride.com",
     isComingSoon: false,
   },
   {
