@@ -44,14 +44,14 @@ function Lightbox({ images, currentIndex, setCurrentIndex, isOpen, onClose }) {
     if (e.target === e.currentTarget) onClose();
   };
 
-  // Button styles to hide system cursor
+  
   const btnStyle = { cursor: "none", zIndex: 10001 };
 
   return ReactDOM.createPortal(
     <div
       className="lightbox active"
       onClick={handleBackgroundClick}
-      // MUHIM: Zidna z-index w cursor: none hna
+     
       style={{ cursor: "none", zIndex: 10000 }}
     >
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>

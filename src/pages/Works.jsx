@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import rmImage from "../assets/imgs/works/1-RM.jpg";
 import jaleoImage from "../assets/imgs/works/2-jaleo.jpg";
 import qoodyImage from "../assets/imgs/works/qoody.jpg";
-import imapImage from "../assets/imgs/works/4-Imap.jpg";
-import automgImage from "../assets/imgs/works/automg.jpg";
+import malmoImage from "../assets/imgs/works/malmo.jpg";
 import waveyiImage from "../assets/imgs/works/waveyi.jpg";
 import atlasImage from "../assets/imgs/works/AtlasRide.jpg";
 
@@ -36,23 +35,24 @@ const worksData = [
     link: "https://qoody.vercel.app",
     isComingSoon: false,
   },
+
   {
     id: 4,
+    imageSrc: malmoImage,
+    altText: "Malmo Project",
+    description:
+      "Created a contemporary website for a design and packaging agency specializing in digital products and creative services.",
+    link: "https://malmo-nine.vercel.app",
+    isComingSoon: false,
+  },
+  {
+    id: 5,
     imageSrc: atlasImage,
     altText: "Atlas Ride",
     description:
       "A sleek VIP website for Atlas Ride, showcasing an exclusive fleet of classic and premium vehicles.",
     link: "https://atlas-ride.com",
     isComingSoon: false,
-  },
-  {
-    id: 5,
-    imageSrc: automgImage,
-    altText: "Auto MG cars",
-    description:
-      "Sleek and dynamic website for Atlas Ride, showcasing classic and special cars with style and flair.",
-    link: null,
-    isComingSoon: true,
   },
 
   {
