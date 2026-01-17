@@ -4,7 +4,7 @@ import rmImage from "../assets/imgs/works/1-RM.jpg";
 import jaleoImage from "../assets/imgs/works/2-jaleo.jpg";
 import qoodyImage from "../assets/imgs/works/qoody.jpg";
 import malmoImage from "../assets/imgs/works/malmo.jpg";
-import waveyiImage from "../assets/imgs/works/waveyi.jpg";
+import zahraiImage from "../assets/imgs/works/ZAHRA.jpg";
 import atlasImage from "../assets/imgs/works/AtlasRide.jpg";
 
 const worksData = [
@@ -57,10 +57,10 @@ const worksData = [
 
   {
     id: 6,
-    imageSrc: waveyiImage,
+    imageSrc: zahraiImage,
     altText: "Waveyi Clothing",
     description:
-      "Trendy and vibrant e-commerce site for Waveyi, tailored for Gen Z fashion lovers and modern shoppers.",
+      "Built a modern logistics platform connecting clients and chauffeurs for baggage and relocation services.",
     link: null,
     isComingSoon: true,
   },
@@ -68,7 +68,7 @@ const worksData = [
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(
-    () => window.matchMedia(query).matches
+    () => window.matchMedia(query).matches,
   );
 
   useEffect(() => {
