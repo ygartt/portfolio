@@ -60,7 +60,7 @@ const worksData = [
     imageSrc: zahraiImage,
     altText: "Waveyi Clothing",
     description:
-      "Built a modern logistics platform connecting clients and chauffeurs for baggage and relocation services.",
+      "built a modern logistics platform that connects customers with drivers for baggage and transportation services.",
     link: null,
     isComingSoon: true,
   },
