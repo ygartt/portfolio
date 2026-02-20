@@ -16,6 +16,9 @@ import blenderIcon from "../assets/imgs/skills/log/1-blender.png";
 import flStudioIcon from "../assets/imgs/skills/log/3-Fl studio.png";
 import autocadIcon from "../assets/imgs/skills/log/5-autocad.webp";
 import officeIcon from "../assets/imgs/skills/log/6-Microsoft.png";
+import expressIcon from "../assets/imgs/skills/tech/expressJS.png";
+import mongoDBIcon from "../assets/imgs/skills/tech/mongoDB.png";
+import nodeJSIcon from "../assets/imgs/skills/tech/nodeJS.png";
 
 const techStack = [
   { src: javaIcon, alt: "Java Logo" },
@@ -26,6 +29,9 @@ const techStack = [
   { src: phpIcon, alt: "PHP Logo" },
   { src: mysqlIcon, alt: "MySQL Logo" },
   { src: tailwindIcon, alt: "Tailwind CSS Logo" },
+  { src: expressIcon, alt: "ExpressJS Logo" },
+  { src: nodeJSIcon, alt: "NodeJS Logo" },
+  { src: mongoDBIcon, alt: "MongoDB Logo" },
 ];
 
 const softwareToolkit = [
@@ -47,7 +53,7 @@ const mobileText = `Blending design aesthetics with development skills to create
 
 function Skills() {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 767px)").matches
+    window.matchMedia("(max-width: 767px)").matches,
   );
 
   useEffect(() => {
