@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import logoImage from "../assets/imgs/logo-png.png";
 import linkedinIcon from "../assets/imgs/icons/linkedin.png";
 import githubIcon from "../assets/imgs/icons/github.png";
-import pinterestIcon from "../assets/imgs/icons/Pinterest.png";
+import instagramIcon from "../assets/imgs/icons/instagram.png";
 
 function easeInOutCubic(t, b, c, d) {
   t /= d / 2;
@@ -25,10 +25,10 @@ const socialLinks = [
     alt: "GitHub",
   },
   {
-    href: "https://pin.it/1HPIWQWik",
-    label: "Pinterest",
-    icon: pinterestIcon,
-    alt: "Pinterest",
+    href: "https://www.instagram.com/yg.artt",
+    label: "Instagram",
+    icon: instagramIcon,
+    alt: "Instagram",
   },
 ];
 
@@ -72,7 +72,7 @@ function Header() {
           timeElapsed,
           startPosition,
           distance,
-          duration
+          duration,
         );
         window.scrollTo(0, run);
         if (timeElapsed < duration) requestAnimationFrame(animation);
@@ -107,7 +107,7 @@ function Header() {
     let sectionObserver;
     if (sections.length > 0) {
       setCurrentSection(
-        sections[0]?.getAttribute("data-section-name") || "Home"
+        sections[0]?.getAttribute("data-section-name") || "Home",
       );
       const isMobileObserver = window.matchMedia("(max-width: 767px)").matches;
       const observerOptions = {
@@ -125,7 +125,7 @@ function Header() {
       };
       sectionObserver = new IntersectionObserver(
         observerCallback,
-        observerOptions
+        observerOptions,
       );
       sections.forEach((section) => sectionObserver.observe(section));
     }

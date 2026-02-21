@@ -1,7 +1,8 @@
 import mailIcon from "../assets/imgs/icons/Mail.png";
 import linkedInIcon from "../assets/imgs/icons/LinkedIn.png";
-import instagramIcon from "../assets/imgs/icons/instagram.png";
+// import instagramIcon from "../assets/imgs/icons/instagram.png";
 import pinterestIcon from "../assets/imgs/icons/Pinterest.png";
+import behanceIcon from "../assets/imgs/icons/behance.png";
 import lineImage from "../assets/imgs/line.png";
 
 function Footer() {
@@ -68,19 +69,6 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/yg.artt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={instagramIcon}
-                    alt="Instagram"
-                    className="footer-icon-img"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://pin.it/1HPIWQWik"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -88,6 +76,19 @@ function Footer() {
                   <img
                     src={pinterestIcon}
                     alt="Pinterest"
+                    className="footer-icon-img"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.behance.net/ygartt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={behanceIcon}
+                    alt="Behance"
                     className="footer-icon-img"
                   />
                 </a>

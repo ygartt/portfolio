@@ -8,15 +8,17 @@ import showcaseImg3 from "../assets/imgs/showcase/3.jpg";
 import showcaseImg4 from "../assets/imgs/showcase/4.jpg";
 import showcaseImg5 from "../assets/imgs/showcase/5.jpg";
 import showcaseImg6 from "../assets/imgs/showcase/6.jpg";
-import showcaseImg7 from "../assets/imgs/showcase/7.jpg";
+// import showcaseImg7 from "../assets/imgs/showcase/7.jpg";
 import showcaseImg8 from "../assets/imgs/showcase/8.jpg";
 import showcaseImg9 from "../assets/imgs/showcase/9.jpg";
 import showcaseImg10 from "../assets/imgs/showcase/10.jpg";
 import showcaseImg11 from "../assets/imgs/showcase/11.jpg";
-import showcaseImg12 from "../assets/imgs/showcase/12.jpg";
+// import showcaseImg12 from "../assets/imgs/showcase/12.jpg";
 import showcaseImg13 from "../assets/imgs/showcase/13.jpg";
 import showcaseImg14 from "../assets/imgs/showcase/14.jpg";
 import showcaseImg15 from "../assets/imgs/showcase/15.jpg";
+import FightClubPoster from "../assets/imgs/showcase/FightClubPoster.jpg";
+import AmericanPsychoPoster from "../assets/imgs/showcase/AmericanPsychoPoster.jpg";
 
 const showcaseImages = [
   showcaseImg1,
@@ -25,12 +27,14 @@ const showcaseImages = [
   showcaseImg4,
   showcaseImg5,
   showcaseImg6,
-  showcaseImg7,
+  // showcaseImg7,
+  FightClubPoster,
+  AmericanPsychoPoster,
   showcaseImg8,
   showcaseImg9,
   showcaseImg10,
   showcaseImg11,
-  showcaseImg12,
+  // showcaseImg12,
   showcaseImg13,
   showcaseImg14,
   showcaseImg15,
@@ -44,7 +48,7 @@ const textConfig = {
 function Showcase() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 767px)").matches
+    window.matchMedia("(max-width: 767px)").matches,
   );
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -54,7 +58,7 @@ function Showcase() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentImages = showcaseImages.slice(
     startIndex,
-    startIndex + itemsPerPage
+    startIndex + itemsPerPage,
   );
 
   useEffect(() => {
@@ -119,7 +123,7 @@ function Showcase() {
                 >
                   {pageNumber}
                 </button>
-              )
+              ),
             )}
           </div>
 

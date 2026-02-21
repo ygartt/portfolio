@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import laptopImg from "../assets/imgs/laptop.png";
-import javaIcon from "../assets/imgs/skills/tech/1-java.png";
+import javaIcon from "../assets/imgs/skills/tech/java.png";
 import jsIcon from "../assets/imgs/skills/tech/2-js.png";
-import viteIcon from "../assets/imgs/skills/tech/3-vite.png";
+// import viteIcon from "../assets/imgs/skills/tech/3-vite.png";
 import reactIcon from "../assets/imgs/skills/tech/4-react.png";
 import gitIcon from "../assets/imgs/skills/tech/5-git.png";
 import phpIcon from "../assets/imgs/skills/tech/6-php.png";
@@ -19,19 +19,23 @@ import officeIcon from "../assets/imgs/skills/log/6-Microsoft.png";
 import expressIcon from "../assets/imgs/skills/tech/expressJS.png";
 import mongoDBIcon from "../assets/imgs/skills/tech/mongoDB.png";
 import nodeJSIcon from "../assets/imgs/skills/tech/nodeJS.png";
+import nextJSIcon from "../assets/imgs/skills/tech/nextJS.png";
+import SQLserIcon from "../assets/imgs/skills/tech/SQLserver.png";
 
 const techStack = [
   { src: javaIcon, alt: "Java Logo" },
   { src: jsIcon, alt: "JavaScript Logo" },
-  { src: viteIcon, alt: "Vite Logo" },
+  // { src: viteIcon, alt: "Vite Logo" },
   { src: reactIcon, alt: "React Logo" },
-  { src: gitIcon, alt: "Git Logo" },
-  { src: phpIcon, alt: "PHP Logo" },
-  { src: mysqlIcon, alt: "MySQL Logo" },
   { src: tailwindIcon, alt: "Tailwind CSS Logo" },
+  { src: nextJSIcon, alt: "NextJS Logo" },
   { src: expressIcon, alt: "ExpressJS Logo" },
   { src: nodeJSIcon, alt: "NodeJS Logo" },
   { src: mongoDBIcon, alt: "MongoDB Logo" },
+  { src: phpIcon, alt: "PHP Logo" },
+  { src: gitIcon, alt: "Git Logo" },
+  { src: SQLserIcon, alt: "SQL Server Logo" },
+  { src: mysqlIcon, alt: "MySQL Logo" },
 ];
 
 const softwareToolkit = [
