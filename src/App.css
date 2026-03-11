@@ -1497,7 +1497,7 @@ body {
   }
   .center-card p {
     font-size: 14px;
-    width: 90%;
+    width: 100%;
     text-align: center;
     color: #000000;
     line-height: 1.6;
@@ -1593,7 +1593,7 @@ body {
   }
 
   .works-header p {
-    width: 100%;
+    width: 95%;
     font-size: 14px;
   }
 
@@ -1650,7 +1650,7 @@ body {
     width: 100%;
   }
   .showcase-header p {
-    width: 100%;
+    width: 90%;
     font-size: 14px;
   }
 
