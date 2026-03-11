@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { Draggable } from "gsap/draggable";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import contentImage from "../assets/imgs/contentYGARTT.png";
 
