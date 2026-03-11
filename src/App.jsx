@@ -11,6 +11,7 @@ import Skills from "./pages/Skills";
 import Works from "./pages/Works";
 import Showcase from "./pages/Showcase";
 import Contact from "./pages/Contact";
+import ContactCards from "./pages/ContactCards";
 import Footer from "./pages/Footer";
 import Lightbox from "./pages/Lightbox";
 
@@ -34,7 +35,7 @@ function useFadeInOnView() {
           observer.unobserve(ref.current);
         }
       },
-      { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0.1 }
+      { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0.1 },
     );
 
     observer.observe(ref.current);
@@ -86,7 +87,7 @@ function App() {
               <Showcase />
             </FadeUp>
             <FadeUp>
-              <Contact />
+              <ContactCards />
             </FadeUp>
           </main>
           <Footer />

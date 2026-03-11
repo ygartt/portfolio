@@ -1,7 +1,23 @@
+::selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 /* === BUTLER FONT FAMILY === */
 @font-face {
   font-family: "Butler-Black";
   src: url("./assets/fonts/Butler_Black.otf") format("opentype");
+}
+
+/* === Amanojaku === */
+@font-face {
+  font-family: "Amanojaku";
+  src: url("./assets/fonts/Amanojaku.ttf") format("opemtype");
 }
 
 /*====== Gill Sans =====*/
@@ -353,6 +369,8 @@ body {
   height: auto;
   display: block;
   margin: 0 auto;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 /* =================  ABOUT SECTION  ================*/
@@ -360,6 +378,7 @@ body {
   background-color: rgb(255, 255, 255);
   padding: 7%;
 }
+
 .about-content {
   background-color: rgb(255, 255, 255);
   color: #000;
@@ -391,19 +410,43 @@ body {
   margin-top: 7%;
 }
 
-.about-text h2 {
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 1%;
+/* Main title Design  */
+.title-card-wrapper-about {
+  background-image: url("./assets/imgs/CardBG.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
+.title-card-wrapper-about h2 {
+  font-family: "Amanojaku", sans-serif;
+  font-size: 33px;
+  color: #000000;
+  margin: 0;
+  white-space: nowrap;
+  transform: translateY(-66%);
+}
+
+/* end */
+
 .about-content h3 {
-  font-family:
-    "BlackMatcha", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 18px;
+  padding-top: 2%;
+  font-family: "Amanojaku", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
   color: rgb(0, 102, 255);
   margin-bottom: 4%;
+}
+
+.aboutSpan {
+  font-family:
+    "BlackMatcha", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 17px;
 }
 
 .about-text p {
@@ -480,6 +523,10 @@ body {
   color: #000;
 }
 
+.title-card-wrapperskills {
+  display: none;
+}
+
 .skills-layout-container {
   display: flex;
   flex-wrap: wrap;
@@ -508,11 +555,12 @@ body {
 
 .laptop-img {
   position: absolute;
-  z-index: 10;
+  z-index: 999 !important; /* Force it to be on top */
   margin-top: 7%;
   right: -20%;
   width: 340px;
   height: auto;
+  pointer-events: none;
 }
 
 /* ==== CARD 2:  ==== */
@@ -530,9 +578,9 @@ body {
 }
 
 .center-card h2 {
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
+  font-family: "Amanojaku", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 33px;
+  /* text-transform: uppercase; */
   color: rgb(255, 255, 255);
   margin-top: 20%;
   margin-bottom: -22%;
@@ -568,12 +616,11 @@ body {
 }
 
 .skills-group h3 {
-  font-family:
-    "BlackMatcha", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 16px;
+  font-family: "Amanojaku", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 12px;
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .skills-icon-grid {
@@ -587,11 +634,43 @@ body {
   height: 25px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  opacity: 1;
 }
 
 .skills-icon-grid img:hover {
   transform: scale(1.1);
 }
+
+/* ========= TILTES DESIGN ( Showcase & WORKS & Contact ) ==========
+========================================================
+========================================================  */
+
+.title-card-wrapper {
+  background-image: url("./assets/imgs/CardBG.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 3% auto;
+}
+
+.title-card-wrapper h2 {
+  font-family: "Amanojaku", sans-serif;
+  font-size: 33px;
+  color: #000000;
+  margin: 0;
+  white-space: nowrap;
+  display: inline-block;
+  transform: translateY(-60%) !important;
+}
+
+/* END ===================================
+==========================================
+========================================== */
 
 /* ============= MY WORKS   =============  */
 
@@ -601,28 +680,21 @@ body {
   background-color: #ffffff;
   color: #000;
 }
-
 .works-header {
   width: 70%;
   margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Bach l-card dji wast l-page */
   text-align: center;
 }
 
-.works-header h2 {
-  color: rgb(0, 102, 255);
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
 .works-header p {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", sans-serif;
   font-size: 12px;
   width: 88%;
   margin: auto;
   line-height: 1.7;
-  text-align: center;
   color: #000000;
 }
 
@@ -710,14 +782,6 @@ body {
   width: 70%;
   margin: 0 auto 50px auto;
   text-align: center;
-}
-
-.showcase-header h2 {
-  color: rgb(0, 102, 255);
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
 }
 
 .showcase-header p {
@@ -814,16 +878,16 @@ body {
   color: #fff;
   border: rgb(0, 0, 0);
 }
-/* Full-page overlay covering header */
+
 .lightbox {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* full screen including header */
-  z-index: 9000; /* above header */
-  backdrop-filter: blur(7px); /* blur everything behind */
-  background-color: rgba(0, 0, 0, 0.4); /* dim overlay */
+  height: 100%;
+  z-index: 9000;
+  backdrop-filter: blur(7px);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -834,13 +898,11 @@ body {
     visibility 0.3s ease;
 }
 
-/* Active state */
 .lightbox.active {
   visibility: visible;
   opacity: 1;
 }
 
-/* Content should stay sharp */
 .lightbox-content {
   position: relative;
   text-align: center;
@@ -849,7 +911,6 @@ body {
   backdrop-filter: none;
 }
 
-/* Image styling */
 .lightbox-img {
   max-width: 85vw;
   max-height: 78vh;
@@ -859,7 +920,6 @@ body {
   backdrop-filter: none;
 }
 
-/* Controls container */
 .lightbox-controls {
   display: flex;
   justify-content: center;
@@ -877,7 +937,7 @@ body {
 /* Buttons */
 .lightbox-btn {
   background: none;
-  border: none;
+  border: none !important;
   width: 40px;
   height: 40px;
   padding: 5px;
@@ -896,26 +956,19 @@ body {
 }
 
 /* ============ CONTACT =========== */
-
 .contact {
-  padding: 7%;
+  padding: 10% 5% 0 5%;
   background-color: #ffffff;
   color: #000;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
 }
 
 .contact-header {
   width: 70%;
   margin: 0 auto 40px auto;
-  text-align: center;
-}
-
-.contact-header h2 {
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  color: rgb(0, 102, 255);
 }
 
 .contact-header p {
@@ -932,20 +985,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 7px;
-  margin-bottom: 50px;
-}
-
-.email-icon {
-  width: 20px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.contact-email a:hover + .email-icon {
-  transform: rotate(30deg);
-  filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(3755%)
-    hue-rotate(200deg) brightness(100%) contrast(107%);
+  gap: 10px;
+  margin-bottom: 120px;
 }
 
 .contact-email a {
@@ -953,25 +994,121 @@ body {
   font-size: 23px;
   font-weight: bold;
   color: #000;
-  transition: color 0.3s ease;
   text-decoration: underline;
+  transition: color 0.3s ease;
 }
+
 .contact-email a:hover {
   color: rgb(0, 102, 255);
 }
 
-.contact-image-card {
-  margin-top: -5%;
-  width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
+.email-icon {
+  width: 20px;
+  height: auto;
+}
+
+.contact-cards-container {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 85%;
+  margin: 0 auto;
+  position: relative;
+  height: 600px;
+}
+
+.contact-card:active {
+  cursor: none;
+}
+
+.contact-card {
+  width: 380px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  cursor: none !important;
+  touch-action: none;
+  user-select: none;
+}
+
+.contact-card:active {
+  cursor: grabbing;
+  z-index: 8 !important;
+}
+
+.card-1 {
+  width: 400px;
+  z-index: 1;
+  left: 5%;
+}
+
+.card-2 {
+  width: 480px;
+  z-index: 4;
+  left: 30%;
+  top: 14%;
+}
+
+.card-3 {
+  z-index: 2;
+  left: 60%;
+  bottom: 10%;
+}
+
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  position: relative;
   justify-content: center;
 }
 
-.contact-image-card img {
-  width: 77%;
+.window-controls {
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  left: 15px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+.yellow {
+  background-color: #ffbd2e;
+}
+.green {
+  background-color: #27c93f;
+}
+
+.card-title {
+  font-family: "Amanojaku", sans-serif;
+  font-size: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.card-img-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.contact-card img {
+  width: 100%;
+  height: auto;
   display: block;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 /*========= FOOTER =========*/
@@ -1259,15 +1396,21 @@ body {
     width: 100%;
   }
 
-  .about-text h2 {
-    font-size: 26px;
+  /* Main title Design  */
+  .title-card-wrapper-about {
+    width: 50%;
+    height: 2vh;
   }
 
-  .about-text h3 {
-    font-size: 17px;
+  .title-card-wrapper-about h2 {
+    font-size: 22px;
   }
 
-  .about-text p {
+  .about-content h3 {
+    font-size: 13px;
+  }
+
+  .about-content p {
     width: 100%;
     font-size: 12px;
   }
@@ -1320,11 +1463,32 @@ body {
     padding: 0 0 30px 0;
   }
 
+  .title-card-wrapperskills {
+    display: block;
+    background-image: url("./assets/imgs/CardBG.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 44%;
+    height: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 7% auto;
+  }
+
+  .title-card-wrapperskills h2 {
+    font-family: "Amanojaku", sans-serif;
+    font-size: 22px;
+    color: #000000;
+    margin: 0;
+    white-space: nowrap;
+    display: inline-block;
+    transform: translateY(-60%) !important;
+  }
+
   .center-card h2 {
-    font-size: 30px;
-    color: rgb(0, 102, 255);
-    margin-top: 0;
-    margin-bottom: 10px;
+    display: none;
   }
   .center-card p {
     font-size: 14px;
@@ -1375,7 +1539,7 @@ body {
   }
 
   .skills-group h3 {
-    font-size: 15px;
+    font-size: 12px;
     margin-bottom: 17px;
     color: rgb(255, 255, 255);
   }
@@ -1391,6 +1555,24 @@ body {
     height: 25px;
   }
 
+  /* ========= TILTES DESIGN ( Showcase & WORKS & Contact ) ==========
+========================================================
+========================================================  */
+
+  .title-card-wrapper {
+    width: 44%;
+    height: 2vh;
+  }
+
+  .title-card-wrapper h2 {
+    font-size: 22px;
+  }
+
+  /* END ===================================
+==========================================
+
+
+
   /* ===== WORKS  ===== */
 
   #w5and6 {
@@ -1404,9 +1586,7 @@ body {
   .works-header {
     width: 100%;
   }
-  .works-header h2 {
-    font-size: 30px;
-  }
+
   .works-header p {
     width: 100%;
     font-size: 14px;
@@ -1464,9 +1644,6 @@ body {
   .showcase-header {
     width: 100%;
   }
-  .showcase-header h2 {
-    font-size: 30px;
-  }
   .showcase-header p {
     width: 100%;
     font-size: 14px;
@@ -1500,11 +1677,7 @@ body {
     width: 100%;
     margin-bottom: 30px;
   }
-  .contact-header h2 {
-    font-size: 30px;
-  }
   .contact-header p {
-    width: 100%;
     font-size: 14px;
   }
 
@@ -1519,19 +1692,13 @@ body {
   .contact-email a {
     font-size: 18px;
   }
-
-  .contact-image-card {
-    width: 100%;
-    margin-top: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  .contact-cards-container {
+    display: none !important;
   }
 
-  .contact-image-card img {
-    width: 470px;
-    max-width: 100%;
-    display: block;
+  .contact {
+    padding-bottom: 15%;
+    min-height: auto;
   }
 
   /*========= FOOTER =========*/
@@ -1710,16 +1877,22 @@ body {
     margin-top: 4%;
   }
 
-  .about-text h2 {
-    font-size: 27px;
+  /* Main title Design  */
+  .title-card-wrapper-about {
+    width: 50%;
+    height: 2vh;
+  }
+
+  .title-card-wrapper-about h2 {
+    font-size: 22px;
   }
 
   .about-content h3 {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .about-text p {
-    font-size: 12px;
+    font-size: 11px;
     width: 95%;
   }
 
@@ -1747,7 +1920,7 @@ body {
   }
 
   .additional-card .card-text-box p {
-    font-size: 12px;
+    font-size: 11px;
     width: 90%;
   }
 
@@ -1788,12 +1961,12 @@ body {
   }
 
   .center-card h2 {
-    font-size: 28px;
+    font-size: 22px;
     margin-top: 10%;
     margin-bottom: -15%;
   }
   .center-card p {
-    font-size: 12px;
+    font-size: 11px;
     width: 88%;
     line-height: 1.6;
   }
@@ -1813,7 +1986,7 @@ body {
   }
 
   .skills-group h3 {
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
 
@@ -1827,6 +2000,27 @@ body {
     height: 22px;
   }
 
+  /* ========= TILTES DESIGN ( Showcase & WORKS & Contact ) ==========
+========================================================
+========================================================  */
+
+  .title-card-wrapper {
+    width: 44%;
+    height: 2vh;
+  }
+
+  .title-card-wrapper h2 {
+    font-size: 22px;
+  }
+
+  /* END ===================================
+==========================================
+
+
+
+
+
+
   /*========== WORKS ===========*/
 
   .works {
@@ -1836,11 +2030,9 @@ body {
   .works-header {
     width: 80%;
   }
-  .works-header h2 {
-    font-size: 27px;
-  }
+
   .works-header p {
-    font-size: 12px;
+    font-size: 11px;
     width: 90%;
   }
 
@@ -1878,11 +2070,9 @@ body {
   .showcase-header {
     width: 80%;
   }
-  .showcase-header h2 {
-    font-size: 27px;
-  }
+
   .showcase-header p {
-    font-size: 12px;
+    font-size: 11px;
     width: 97%;
   }
 
@@ -1918,18 +2108,16 @@ body {
 
   .contact {
     padding: 8% 5%;
+    min-height: auto;
   }
 
   .contact-header {
     width: 80%;
     margin-bottom: 35px;
   }
-  .contact-header h2 {
-    font-size: 27px;
-    margin-bottom: 12px;
-  }
+
   .contact-header p {
-    font-size: 12px;
+    font-size: 11px;
     width: 97%;
   }
 
@@ -1944,12 +2132,53 @@ body {
     font-size: 20px;
   }
 
-  .contact-image-card {
-    width: 85%;
-    margin-top: 0;
+  .contact-cards-container {
+    width: 95%;
+    height: 450px;
   }
-  .contact-image-card img {
-    width: 85%;
+
+  .contact-card {
+    width: 280px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-1 {
+    width: 300px;
+    left: 3%;
+    z-index: 1;
+  }
+
+  .card-2 {
+    width: 340px;
+    left: 28%;
+    top: 20%;
+    z-index: 4;
+  }
+
+  .card-3 {
+    width: 280px;
+    left: 55%;
+    bottom: 5%;
+    z-index: 2;
+  }
+
+  .contact-card:active {
+    cursor: grabbing;
+    z-index: 8 !important;
+  }
+
+  .card-top-bar {
+    padding: 10px 12px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .card-title {
+    font-size: 9px;
+    letter-spacing: 1.2px;
   }
 
   /*======== FOOTER =======*/

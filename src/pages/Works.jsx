@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/draggable";
 
 import rmImage from "../assets/imgs/works/1-RM.jpg";
 import jaleoImage from "../assets/imgs/works/2-jaleo.jpg";
@@ -6,6 +9,8 @@ import qoodyImage from "../assets/imgs/works/qoody.jpg";
 import malmoImage from "../assets/imgs/works/malmo.jpg";
 import zahraiImage from "../assets/imgs/works/ZAHRA.jpg";
 import atlasImage from "../assets/imgs/works/AtlasRide.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const worksData = [
   {
@@ -35,7 +40,6 @@ const worksData = [
     link: "https://qoody.vercel.app",
     isComingSoon: false,
   },
-
   {
     id: 4,
     imageSrc: malmoImage,
@@ -54,7 +58,6 @@ const worksData = [
     link: "https://atlas-ride.com",
     isComingSoon: false,
   },
-
   {
     id: 6,
     imageSrc: zahraiImage,
@@ -70,51 +73,76 @@ function useMediaQuery(query) {
   const [matches, setMatches] = useState(
     () => window.matchMedia(query).matches,
   );
-
   useEffect(() => {
     const mediaQuery = window.matchMedia(query);
-
-    const handleChange = (event) => {
-      setMatches(event.matches);
-    };
-
+    const handleChange = (event) => setMatches(event.matches);
     mediaQuery.addEventListener("change", handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleChange);
-    };
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, [query]);
-
   return matches;
 }
 
 function Works() {
   const isMobile = useMediaQuery("(max-width: 767px)");
+  const sectionRef = useRef(null);
 
   const textConfig = {
     desktop: `This gallery represents a cross-section of my development capabilities, focusing on clean code and functional solutions ... Each piece was an opportunity to solve a unique technical problem, craft a compelling user experience, and deliver a polished, high-performance product.`,
     mobile: `Each piece was an opportunity to solve a unique technical problem, craft a compelling user experience, and deliver a polished, high-performance product.`,
   };
 
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse restart reverse",
+        },
+      });
+
+      tl.fromTo(
+        ".works-header h2, .works-header p",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: "expo.out" },
+      ).fromTo(
+        ".work-card",
+        { y: 60, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          stagger: { amount: 0.8, ease: "power2.inOut" },
+          ease: "quint.out",
+        },
+        "-=0.8",
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const displayedWorks = isMobile ? worksData.slice(0, 4) : worksData;
+
   return (
     <section
-      className="works fade-up"
+      ref={sectionRef}
+      className="works"
       id="works"
       data-section-name="A Look at My Work"
     >
       <div className="works-header">
-        <h2>My Latest Projects</h2>
-
+        <div className="title-card-wrapper">
+          <h2>My Latest Projects</h2>
+        </div>
         <p>{isMobile ? textConfig.mobile : textConfig.desktop}</p>
       </div>
 
       <div className="works-container">
-        {worksData.map((work) => (
-          <div
-            className="work-card"
-            key={work.id}
-            id={work.id === 5 || work.id === 6 ? "w5and6" : undefined}
-          >
+        {displayedWorks.map((work) => (
+          <div className="work-card" key={work.id}>
             <div className="work-img-container">
               <img
                 className="main-work-img"
@@ -124,7 +152,6 @@ function Works() {
             </div>
             <div className="work-desc">
               <p>{work.description}</p>
-
               {work.isComingSoon ? (
                 <span className="work-btn">
                   Project Coming Soon <i className="fas fa-clock"></i>

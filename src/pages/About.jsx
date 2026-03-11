@@ -1,22 +1,80 @@
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import aboutImage from "../assets/imgs/yg-about.jpg";
 import quoteImage from "../assets/imgs/double quote.png";
 import about02Image from "../assets/imgs/about02.jpg";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function About() {
+  const mainRef = useRef(null);
+  const img1Ref = useRef(null);
+  const text1Ref = useRef(null);
+  const cardRef = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from(img1Ref.current, {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: img1Ref.current,
+          start: "top 85%",
+          toggleActions: "play reverse restart reverse",
+        },
+      });
+
+      gsap.from(text1Ref.current, {
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: text1Ref.current,
+          start: "top 85%",
+          toggleActions: "play reverse restart reverse",
+        },
+      });
+
+      gsap.from(cardRef.current, {
+        y: 60,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 80%",
+          toggleActions: "play reverse restart reverse",
+        },
+      });
+    }, mainRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={mainRef}
       className="about"
       id="about"
       data-section-name="A glimpse into who I am"
     >
-      <div className="about-content fade-up">
-        <div className="about-img fade-up">
+      <div className="about-content">
+        <div ref={img1Ref} className="about-img">
           <img src={aboutImage} alt="About Yassine" />
         </div>
-        <div className="about-text">
+        <div ref={text1Ref} className="about-text">
           <img className="dq" src={quoteImage} alt="Quote start" />
-          <h2>One special boy</h2>
-          <h3>Software Developer & Graphic Designer</h3>
+
+          <div className="title-card-wrapper-about">
+            <h2>One Special boy</h2>
+          </div>
+          <h3>
+            Software Developer <span className="aboutSpan">&</span> Graphic
+            Designer
+          </h3>
           <p>
             I’m Yassine, a creative soul driven by passion and curiosity, a
             programmer and graphic designer who finds beauty in both logic and
@@ -30,7 +88,7 @@ function About() {
         </div>
       </div>
 
-      <div className="additional-card fade-up">
+      <div ref={cardRef} className="additional-card">
         <div className="card-img">
           <img src={about02Image} alt="Artistic representation" />
         </div>

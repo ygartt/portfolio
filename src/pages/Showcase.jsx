@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/draggable";
 import backIcon from "../assets/imgs/back.png";
 import nextIcon from "../assets/imgs/next.png";
 import Lightbox from "./Lightbox";
@@ -8,17 +11,17 @@ import showcaseImg3 from "../assets/imgs/showcase/3.jpg";
 import showcaseImg4 from "../assets/imgs/showcase/4.jpg";
 import showcaseImg5 from "../assets/imgs/showcase/5.jpg";
 import showcaseImg6 from "../assets/imgs/showcase/6.jpg";
-// import showcaseImg7 from "../assets/imgs/showcase/7.jpg";
 import showcaseImg8 from "../assets/imgs/showcase/8.jpg";
 import showcaseImg9 from "../assets/imgs/showcase/9.jpg";
 import showcaseImg10 from "../assets/imgs/showcase/10.jpg";
 import showcaseImg11 from "../assets/imgs/showcase/11.jpg";
-// import showcaseImg12 from "../assets/imgs/showcase/12.jpg";
 import showcaseImg13 from "../assets/imgs/showcase/13.jpg";
 import showcaseImg14 from "../assets/imgs/showcase/14.jpg";
 import showcaseImg15 from "../assets/imgs/showcase/15.jpg";
 import FightClubPoster from "../assets/imgs/showcase/FightClubPoster.jpg";
 import AmericanPsychoPoster from "../assets/imgs/showcase/AmericanPsychoPoster.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const showcaseImages = [
   showcaseImg1,
@@ -27,14 +30,12 @@ const showcaseImages = [
   showcaseImg4,
   showcaseImg5,
   showcaseImg6,
-  // showcaseImg7,
   FightClubPoster,
   AmericanPsychoPoster,
   showcaseImg8,
   showcaseImg9,
   showcaseImg10,
   showcaseImg11,
-  // showcaseImg12,
   showcaseImg13,
   showcaseImg14,
   showcaseImg15,
@@ -52,6 +53,7 @@ function Showcase() {
   );
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const sectionRef = useRef(null);
 
   const itemsPerPage = 6;
   const pageCount = Math.ceil(showcaseImages.length / itemsPerPage);
@@ -68,6 +70,39 @@ function Showcase() {
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse restart reverse",
+        },
+      });
+
+      tl.fromTo(
+        ".showcase-header h2, .showcase-header p",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: "expo.out" },
+      ).fromTo(
+        ".showcase-item",
+        { y: 60, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          stagger: { amount: 0.8, ease: "power2.inOut" },
+          ease: "quint.out",
+        },
+        "-=0.8",
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [currentPage]);
+
   const openLightbox = (index) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
@@ -77,12 +112,15 @@ function Showcase() {
 
   return (
     <section
+      ref={sectionRef}
       className="showcase"
       id="showcase"
       data-section-name="A Gallery of My Creative Work"
     >
-      <div className="showcase-header fade-up">
-        <h2>My Creative Gallery</h2>
+      <div className="showcase-header">
+        <div className="title-card-wrapper">
+          <h2>My Creative Gallery</h2>
+        </div>
         <p>{isMobile ? textConfig.mobile : textConfig.desktop}</p>
       </div>
 
@@ -90,7 +128,7 @@ function Showcase() {
         {currentImages.map((imgSrc, index) => (
           <div
             className="showcase-item"
-            key={imgSrc}
+            key={`${currentPage}-${index}`}
             onClick={() => openLightbox(startIndex + index)}
           >
             <img
@@ -110,15 +148,12 @@ function Showcase() {
           >
             <img src={backIcon} alt="Back" />
           </button>
-
           <div className="pagination-numbers">
             {Array.from({ length: pageCount }, (_, i) => i + 1).map(
               (pageNumber) => (
                 <button
                   key={pageNumber}
-                  className={`pagination-btn ${
-                    pageNumber === currentPage ? "active" : ""
-                  }`}
+                  className={`pagination-btn ${pageNumber === currentPage ? "active" : ""}`}
                   onClick={() => setCurrentPage(pageNumber)}
                 >
                   {pageNumber}
@@ -126,7 +161,6 @@ function Showcase() {
               ),
             )}
           </div>
-
           <button
             className="nav-btn next"
             onClick={() => setCurrentPage(currentPage + 1)}
