@@ -10,7 +10,9 @@ function Footer() {
     <footer className="footer" id="main-footer">
       <div className="footer-container fade-up">
         <div className="footer-left">
-          <h3>YGARTT / YASSINE GORMA</h3>
+          <h3>
+            YGARTT <span> / </span> YASSINE GORMA
+          </h3>
           <p>
             A creative soul driven by passion and curiosity, a programmer and
             graphic designer who finds beauty in both logic and art, crafting

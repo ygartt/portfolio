@@ -17,7 +17,7 @@
 /* === Amanojaku === */
 @font-face {
   font-family: "Amanojaku";
-  src: url("./assets/fonts/Amanojaku.ttf") format("opemtype");
+  src: url("./assets/fonts/Amanojaku.otf") format("opentype");
 }
 
 /*====== Gill Sans =====*/
@@ -1141,7 +1141,7 @@ body {
 }
 
 .footer-left {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .footer-center {
@@ -1150,12 +1150,17 @@ body {
 
 /* ===== LEFT ===== */
 .footer-left h3 {
-  font-size: 17px;
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-family: "Amanojaku", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  /* text-transform: uppercase; */
   color: #ffffff;
   margin-bottom: 20px;
   line-height: 1.2;
+}
+/* ===== span ===== */
+.footer-left h3 span {
+  font-size: 15px;
+  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
 }
 
 .footer-left p {
@@ -1169,9 +1174,9 @@ body {
 
 /* ===== CENTER ===== */
 .footer-center h3 {
-  font-size: 17px;
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-family: "Amanojaku", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  /* text-transform: uppercase; */
   color: #ffffff;
   margin-bottom: 20px;
   line-height: 1.2;
@@ -1201,9 +1206,9 @@ body {
 }
 /* ===== RIGHT ===== */
 .footer-right h3 {
-  font-size: 17px;
-  font-family: "BlackMatcha", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-family: "Amanojaku", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  /* text-transform: uppercase; */
   color: #ffffff;
   margin-bottom: 20px;
   line-height: 1.2;
@@ -1727,7 +1732,7 @@ body {
 
   /* ===== LEFT ===== */
   .footer-left h3 {
-    font-size: 15px;
+    font-size: 12px;
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 10px;
@@ -1746,6 +1751,7 @@ body {
   /*======= LEFT =======*/
   .footer-left {
     padding-top: 5%;
+    margin-left: 11%;
   }
 
   /* ===== CENTER ===== */
@@ -1766,7 +1772,7 @@ body {
   }
 
   .footer-right h3 {
-    font-size: 15px;
+    font-size: 12px;
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 20px;
@@ -2201,7 +2207,7 @@ body {
   }
 
   .footer-left {
-    margin-left: 5%;
+    margin-left: 0%;
   }
 
   .footer-center {
@@ -2220,7 +2226,7 @@ body {
   .footer-left h3,
   .footer-center h3,
   .footer-right h3 {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 15px;
   }
 
