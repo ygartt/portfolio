@@ -218,12 +218,10 @@ body {
   height: 15px;
   background-color: rgba(0, 102, 255, 0.8);
   border-radius: 50%;
-  pointer-events: none; /* cursor does not block clicks */
-  transform: translate(-50%, -50%);
-  z-index: 10000;
-  transition:
-    transform 0.1s ease-out,
-    opacity 0.2s ease-out;
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 0.2s ease-out;
+  will-change: transform;
 }
 
 /* Header Styling */
@@ -254,6 +252,7 @@ body {
   height: auto;
   width: 55px;
   display: block;
+  cursor: none;
 }
 .nav-center {
   flex-grow: 1;
@@ -416,7 +415,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 50%;
+  width: 44%;
   height: 5vh;
   display: flex;
   align-items: center;
@@ -426,7 +425,7 @@ body {
 
 .title-card-wrapper-about h2 {
   font-family: "Amanojaku", sans-serif;
-  font-size: 33px;
+  font-size: 30px;
   color: #000000;
   margin: 0;
   white-space: nowrap;
@@ -579,7 +578,7 @@ body {
 
 .center-card h2 {
   font-family: "Amanojaku", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 33px;
+  font-size: 30px;
   /* text-transform: uppercase; */
   color: rgb(255, 255, 255);
   margin-top: 20%;
@@ -650,7 +649,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 44%;
+  width: 40%;
   height: 5vh;
   display: flex;
   align-items: center;
@@ -660,7 +659,7 @@ body {
 
 .title-card-wrapper h2 {
   font-family: "Amanojaku", sans-serif;
-  font-size: 33px;
+  font-size: 30px;
   color: #000000;
   margin: 0;
   white-space: nowrap;
@@ -1404,7 +1403,7 @@ body {
   /* Main title Design  */
   .title-card-wrapper-about {
     width: 50%;
-    height: 2vh;
+    height: 2.5vh;
   }
 
   .title-card-wrapper-about h2 {
@@ -1566,7 +1565,7 @@ body {
 
   .title-card-wrapper {
     width: 44%;
-    height: 2vh;
+    height: 2.5vh;
   }
 
   .title-card-wrapper h2 {

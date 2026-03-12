@@ -6,44 +6,39 @@ function CustomCursor() {
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    const links = Array.from(
-      document.querySelectorAll("a, button, .clickable")
-    );
-
     document.body.style.cursor = "none";
-    links.forEach((link) => (link.style.cursor = "none"));
 
-    const handleMouseMove = (e) => {
+    const moveCursor = (x, y) => {
       if (cursor) {
-        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
       }
     };
 
-    const handleMouseLeave = () => {
-      if (cursor) cursor.style.opacity = "0";
-    };
+    const handleMouseMove = (e) => moveCursor(e.clientX, e.clientY);
 
-    const handleMouseEnter = () => {
-      if (cursor) cursor.style.opacity = "1";
+    const handleCustomUpdate = (e) => {
+      if (e.detail) moveCursor(e.detail.x, e.detail.y);
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    document.documentElement.addEventListener("mouseleave", handleMouseLeave);
-    document.documentElement.addEventListener("mouseenter", handleMouseEnter);
+    window.addEventListener("updateCursor", handleCustomUpdate);
+
+    const handleLeave = () => {
+      if (cursor) cursor.style.opacity = "0";
+    };
+    const handleEnter = () => {
+      if (cursor) cursor.style.opacity = "1";
+    };
+
+    document.documentElement.addEventListener("mouseleave", handleLeave);
+    document.documentElement.addEventListener("mouseenter", handleEnter);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      document.documentElement.removeEventListener(
-        "mouseleave",
-        handleMouseLeave
-      );
-      document.documentElement.removeEventListener(
-        "mouseenter",
-        handleMouseEnter
-      );
-
+      window.removeEventListener("updateCursor", handleCustomUpdate);
+      document.documentElement.removeEventListener("mouseleave", handleLeave);
+      document.documentElement.removeEventListener("mouseenter", handleEnter);
       document.body.style.cursor = "auto";
-      links.forEach((link) => (link.style.cursor = "auto"));
     };
   }, []);
 
@@ -57,12 +52,11 @@ function CustomCursor() {
         left: 0,
         pointerEvents: "none",
         zIndex: 99999,
-        transition: "none",
         willChange: "transform",
         transform: "translate3d(-100px, -100px, 0)",
       }}
     ></div>,
-    document.body
+    document.body,
   );
 }
 

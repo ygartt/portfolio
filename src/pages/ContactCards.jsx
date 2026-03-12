@@ -34,7 +34,7 @@ function Contact({ currentPage }) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-          end: "bottom 20%",
+          // end: "bottom 20%",
           toggleActions: "play reverse restart reverse",
         },
       });
@@ -70,6 +70,12 @@ function Contact({ currentPage }) {
         onPress: function () {
           gsap.set(this.target, { zIndex: 100 });
           gsap.set(".contact-card:not(:hover)", { zIndex: (i) => i + 1 });
+        },
+        onDrag: function () {
+          const event = new CustomEvent("updateCursor", {
+            detail: { x: this.pointerX, y: this.pointerY },
+          });
+          window.dispatchEvent(event);
         },
       });
     }, sectionRef);
