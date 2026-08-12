@@ -12,7 +12,7 @@ const desProjectsData = [
     img: "/imgs/Design/1.webp",
     title: "QOODY Digital Identity",
     desc: "A minimal and bold visual identity merging technology with modern design thinking for a creative digital startup.",
-    link: "",
+    link: "https://www.behance.net/gallery/248610257/QOODY-Visual-Identity-Design",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const desProjectsData = [
     img: "/imgs/Design/2.webp",
     title: "CIH Bank Redesign",
     desc: "A modernized visual identity targeting Generation Z, featuring a reshaped logo while retaining the bank's iconic colors.",
-    link: "",
+    link: "https://www.behance.net/gallery/246896981/CIH-Bank-Visual-Identity-Redesign",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const desProjectsData = [
     img: "/imgs/Design/3.webp",
     title: "Iron Pulse",
     desc: "A bold visual identity for a modern combat sports gym, reflecting strength, intensity, and a true fighting mindset.",
-    link: "",
+    link: "https://www.behance.net/gallery/244784165/IRON-PULSE-Combat-Sports-Brand-Identity",
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const desProjectsData = [
     img: "/imgs/Design/4.webp",
     title: "Malmo Agency",
     desc: "A cinematic visual identity for a creative agency, driven by design, storytelling, and digital innovation to build meaningful brands.",
-    link: "",
+    link: "https://www.behance.net/gallery/242053891/MALMO-Creative-Agency-Visual-Identity",
   },
 ];
 
