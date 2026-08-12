@@ -1,0 +1,265 @@
+.desworks-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 3;
+}
+
+.desworks-band {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.blue-band {
+  background-color: royalblue;
+  z-index: 1;
+}
+
+.black-band {
+  background-color: #000;
+  z-index: 2;
+  clip-path: inset(100% 0% 0% 0%);
+}
+
+.track-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.project-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  clip-path: inset(100% 0% 0% 0%);
+}
+
+.slide-bg-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(10px);
+  z-index: 1;
+}
+
+.desworks-slide-layout {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 3%;
+}
+
+.desworks-num-wrapper {
+  width: 30%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.desworks-num {
+  font-family: "Title", sans-serif;
+  font-size: 44px;
+  color: #ffffff;
+  line-height: 0.8;
+  padding-bottom: 5px;
+}
+
+.slide-content {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.desworks-project-link {
+  display: block;
+  width: 100%;
+  cursor: none;
+}
+
+.slide-main-pic {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+.desworks-right-wrapper {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-left: 4%;
+  padding-bottom: 5px;
+}
+
+.desworks-right-wrapper h3 {
+  font-family: "Title", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.desworks-right-wrapper p {
+  font-family: "Des", sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+}
+
+.desworks-intro-text {
+  font-family: "Title", sans-serif;
+  font-size: 7vw;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.showcase-flex-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+}
+
+.showcase-card {
+  height: 0.9em;
+  width: 2.5em;
+  background-image: url("/imgs/bg.png");
+  background-repeat: no-repeat;
+  border-radius: 100px;
+  margin-bottom: 0.2em;
+  display: inline-block;
+  will-change: background-position, background-size;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-blue {
+  color: white;
+}
+
+.des-custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #000000;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  padding: 12px 25px;
+  white-space: nowrap;
+}
+
+.des-cursor-text {
+  padding-top: 2%;
+  font-family: "Title", sans-serif;
+  font-size: 9px;
+}
+
+.des-custom-cursor svg {
+  width: 15px;
+  height: 15px;
+  stroke: #000000;
+}
+
+@media screen and (max-width: 991px) {
+  .desworks-intro-text {
+    font-size: 4vw;
+  }
+
+  .desworks-slide-layout {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 10% 5%;
+  }
+
+  .desworks-num-wrapper {
+    width: 100%;
+  }
+
+  .desworks-num {
+    font-size: 32px;
+  }
+
+  .slide-content {
+    width: 90%;
+    align-self: center;
+  }
+
+  .desworks-project-link {
+    cursor: pointer;
+  }
+
+  .desworks-right-wrapper {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .des-custom-cursor {
+    display: none;
+  }
+
+  .desworks-right-wrapper h3 {
+    font-size: 14px;
+  }
+
+  .desworks-right-wrapper p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .desworks-intro-text {
+    font-size: 8vw;
+  }
+
+  .slide-content {
+    width: 100%;
+  }
+}

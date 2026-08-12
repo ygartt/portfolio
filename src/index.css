@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Des";
+  src: url("/fonts/des.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Title";
+  src: url("/fonts/title.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Des", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+h1 {
+  color: royalblue;
+  font-family: "Title";
+}
