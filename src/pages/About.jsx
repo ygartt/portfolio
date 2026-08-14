@@ -101,14 +101,15 @@ const About = () => {
         </div>
         <div className="about-content">
           <p>
-            I’m Yassine, a creative soul driven by passion and curiosity, a
-            programmer and graphic designer who finds beauty in both logic and
-            art, I don’t just write code or create visuals, I craft experiences
-            that connect technology with emotion, art is my language, code is my
-            tool, and imagination is the space where I truly feel alive, I love
-            working on projects that blend creativity with purpose, where every
-            color, every line, and every pixel tells a story, for me, art isn’t
-            just what I do, it’s who I am ...
+            I’m Yassine, a MERN Stack Developer and Graphic Designer passionate
+            about building digital experiences where technology meets
+            creativity. I specialize in frontend development, combining clean
+            code, modern interfaces, and strong visual design to turn ideas into
+            engaging web experiences. With a background in graphic design, I
+            approach development from both a technical and creative perspective,
+            focusing on the details that make a product not only functional, but
+            memorable. For me, code is more than a tool .. it’s a way to bring
+            ideas to life.
           </p>
         </div>
       </div>
