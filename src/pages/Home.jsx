@@ -10,7 +10,7 @@ const Home = () => {
       </div>
 
       <div className="image-wrapper">
-        <img src="/imgs/Home.webp" alt="Home Hero" className="home-img" />
+        <img src="/imgs/HomePic.webp" alt="Home Hero" className="home-img" />
       </div>
     </section>
   );
